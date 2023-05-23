@@ -8,3 +8,9 @@
 *.suo
 *.opendb
 *.db-wal
+*.o
+*.tlog
+*.log
+*.sprx
+*.a
+*.txt
