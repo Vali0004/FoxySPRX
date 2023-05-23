@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|PS3">
+      <Configuration>Debug</Configuration>
+      <Platform>PS3</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|PS3">
+      <Configuration>Release</Configuration>
+      <Platform>PS3</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\core\core.cpp" />
+    <ClCompile Include="src\features\features.cpp" />
+    <ClCompile Include="src\filesystem\filesystem.cpp" />
+    <ClCompile Include="src\hooking\hooking.cpp" />
+    <ClCompile Include="src\hooking\hooks\network_is_signed_online.cpp" />
+    <ClCompile Include="src\hooking\method\detour\detour.cpp" />
+    <ClCompile Include="src\logger\logger.cpp" />
+    <ClCompile Include="src\memory\memory.cpp" />
+    <ClCompile Include="src\pch\pch.cpp" />
+    <ClCompile Include="src\prx\prx.cpp" />
+    <ClCompile Include="src\rage\natives\invoker\invoker.cpp" />
+    <ClCompile Include="src\script\script.cpp" />
+    <ClCompile Include="src\syscalls\syscalls.cpp" />
+    <ClCompile Include="src\hooking\method\native\native.cpp" />
+    <ClCompile Include="src\ui\manager\manager.cpp" />
+    <ClCompile Include="src\ui\submenus\demo\demo.cpp" />
+    <ClCompile Include="src\ui\submenus\players\players.cpp" />
+    <ClCompile Include="src\ui\submenus\players\selected_player\selected_player.cpp" />
+    <ClCompile Include="src\ui\submenus\settings\description\background\description_background.cpp" />
+    <ClCompile Include="src\ui\submenus\settings\description\description.cpp" />
+    <ClCompile Include="src\ui\submenus\settings\description\text\description_text.cpp" />
+    <ClCompile Include="src\ui\submenus\settings\footer\background\footer_background.cpp" />
+    <ClCompile Include="src\ui\submenus\settings\footer\footer.cpp" />
+    <ClCompile Include="src\ui\submenus\settings\footer\sprite\footer_sprite.cpp" />
+    <ClCompile Include="src\ui\submenus\settings\header\background\header_background.cpp" />
+    <ClCompile Include="src\ui\submenus\settings\header\header.cpp" />
+    <ClCompile Include="src\ui\submenus\settings\header\text\header_text.cpp" />
+    <ClCompile Include="src\ui\submenus\settings\options\background\options_background.cpp" />
+    <ClCompile Include="src\ui\submenus\settings\options\background\selected\options_bg_selected.cpp" />
+    <ClCompile Include="src\ui\submenus\settings\options\options.cpp" />
+    <ClCompile Include="src\ui\submenus\settings\options\sprite\arrow\arrow.cpp" />
+    <ClCompile Include="src\ui\submenus\settings\options\sprite\arrow\selected\arrow_selected.cpp" />
+    <ClCompile Include="src\ui\submenus\settings\options\sprite\sprite.cpp" />
+    <ClCompile Include="src\ui\submenus\settings\options\sprite\toggle\selected\toggle_selected.cpp" />
+    <ClCompile Include="src\ui\submenus\settings\options\sprite\toggle\toggle.cpp" />
+    <ClCompile Include="src\ui\submenus\settings\options\text\options_text.cpp" />
+    <ClCompile Include="src\ui\submenus\settings\options\text\selected\text_selected.cpp" />
+    <ClCompile Include="src\ui\submenus\settings\settings.cpp" />
+    <ClCompile Include="src\ui\submenus\settings\subtitle\background\subtitle_background.cpp" />
+    <ClCompile Include="src\ui\submenus\settings\subtitle\subtitle.cpp" />
+    <ClCompile Include="src\ui\submenus\settings\subtitle\text\subtitle_text.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\common\defines.h" />
+    <ClInclude Include="src\common\enums.h" />
+    <ClInclude Include="src\common\map.h" />
+    <ClInclude Include="src\common\math.h" />
+    <ClInclude Include="src\common\memory\addresses.h" />
+    <ClInclude Include="src\common\opcodes.h" />
+    <ClInclude Include="src\common\stack.h" />
+    <ClInclude Include="src\common\string.h" />
+    <ClInclude Include="src\common\templates.h" />
+    <ClInclude Include="src\common\timer.h" />
+    <ClInclude Include="src\common\vector.h" />
+    <ClInclude Include="src\core\core.h" />
+    <ClInclude Include="src\features\features.h" />
+    <ClInclude Include="src\filesystem\filesystem.h" />
+    <ClInclude Include="src\hooking\hooking.h" />
+    <ClInclude Include="src\hooking\method\detour\detour.h" />
+    <ClInclude Include="src\include.h" />
+    <ClInclude Include="src\logger\logger.h" />
+    <ClInclude Include="src\memory\memory.h" />
+    <ClInclude Include="src\rage\natives\caller.h" />
+    <ClInclude Include="src\rage\natives\natives.h" />
+    <ClInclude Include="src\pch\pch.h" />
+    <ClInclude Include="src\prx\prx.h" />
+    <ClInclude Include="src\rage\natives\call_context.h" />
+    <ClInclude Include="src\rage\natives\invoker\invoker.h" />
+    <ClInclude Include="src\rage\scr_native_call_context.h" />
+    <ClInclude Include="src\rage\scr_native_registration.h" />
+    <ClInclude Include="src\rage\scr_value.h" />
+    <ClInclude Include="src\rage\scr_vector.h" />
+    <ClInclude Include="src\rage\vectors.h" />
+    <ClInclude Include="src\script\script.h" />
+    <ClInclude Include="src\syscalls\syscalls.h" />
+    <ClInclude Include="src\common\version.h" />
+    <ClInclude Include="src\hooking\method\native\native.h" />
+    <ClInclude Include="src\rage\natives\types.h" />
+    <ClInclude Include="src\ui\classes.h" />
+    <ClInclude Include="src\ui\manager\manager.h" />
+    <ClInclude Include="src\ui\math.h" />
+    <ClInclude Include="src\ui\submenus\demo\demo.h" />
+    <ClInclude Include="src\ui\submenus\players\players.h" />
+    <ClInclude Include="src\ui\submenus\players\selected_player\selected_player.h" />
+    <ClInclude Include="src\ui\submenus\settings\description\background\description_background.h" />
+    <ClInclude Include="src\ui\submenus\settings\description\description.h" />
+    <ClInclude Include="src\ui\submenus\settings\description\text\description_text.h" />
+    <ClInclude Include="src\ui\submenus\settings\footer\background\footer_background.h" />
+    <ClInclude Include="src\ui\submenus\settings\footer\footer.h" />
+    <ClInclude Include="src\ui\submenus\settings\footer\sprite\footer_sprite.h" />
+    <ClInclude Include="src\ui\submenus\settings\header\background\header_background.h" />
+    <ClInclude Include="src\ui\submenus\settings\header\header.h" />
+    <ClInclude Include="src\ui\submenus\settings\header\text\header_text.h" />
+    <ClInclude Include="src\ui\submenus\settings\options\background\options_background.h" />
+    <ClInclude Include="src\ui\submenus\settings\options\background\selected\options_bg_selected.h" />
+    <ClInclude Include="src\ui\submenus\settings\options\options.h" />
+    <ClInclude Include="src\ui\submenus\settings\options\sprite\arrow\arrow.h" />
+    <ClInclude Include="src\ui\submenus\settings\options\sprite\arrow\selected\arrow_selected.h" />
+    <ClInclude Include="src\ui\submenus\settings\options\sprite\sprite.h" />
+    <ClInclude Include="src\ui\submenus\settings\options\sprite\toggle\selected\toggle_selected.h" />
+    <ClInclude Include="src\ui\submenus\settings\options\sprite\toggle\toggle.h" />
+    <ClInclude Include="src\ui\submenus\settings\options\text\options_text.h" />
+    <ClInclude Include="src\ui\submenus\settings\options\text\selected\text_selected.h" />
+    <ClInclude Include="src\ui\submenus\settings\settings.h" />
+    <ClInclude Include="src\ui\submenus\settings\subtitle\background\subtitle_background.h" />
+    <ClInclude Include="src\ui\submenus\settings\subtitle\subtitle.h" />
+    <ClInclude Include="src\ui\submenus\settings\subtitle\text\subtitle_text.h" />
+    <ClInclude Include="src\ui\types\abstract_option.h" />
+    <ClInclude Include="src\ui\types\base_option.h" />
+    <ClInclude Include="src\ui\types\number_option.h" />
+    <ClInclude Include="src\ui\types\player_option.h" />
+    <ClInclude Include="src\ui\types\toggle_option.h" />
+    <ClInclude Include="src\ui\types\option.h" />
+    <ClInclude Include="src\ui\types\submenu.h" />
+    <ClInclude Include="src\ui\types\submenu_option.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCTargetsPath Condition="'$(VCTargetsPath12)' != '' and '$(VSVersion)' == '' and '$(VisualStudioVersion)' == ''">$(VCTargetsPath12)</VCTargetsPath>
+    <ProjectGuid>{6F88B8AF-D5A7-4D1D-BC02-563ACD1313E9}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|PS3'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>SNC</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|PS3'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>SNC</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <PropertyGroup Condition="'$(DebuggerFlavor)'=='PS3Debugger'" Label="OverrideDebuggerDefaults">
+    <!--LocalDebuggerCommand>$(TargetPath)</LocalDebuggerCommand-->
+    <!--LocalDebuggerCommandArguments></LocalDebuggerCommandArguments-->
+    <!--LocalDebuggerCommandLine>-r -e -m</LocalDebuggerCommandLine-->
+    <!--LocalRunCommandLine>-r</LocalRunCommandLine-->
+    <!--LocalTunerCommandLine></LocalTunerCommandLine-->
+    <!--LocalDebuggerFileServingDirectory>$(ProjectDir)</LocalDebuggerFileServingDirectory-->
+    <!--LocalDebuggerHomeDirectory>$(ProjectDir)</LocalDebuggerHomeDirectory-->
+    <!--LocalDebuggerProjectFile></LocalDebuggerProjectFile-->
+    <!--LocalDebuggerResetType>Soft</LocalDebuggerResetType-->
+    <!--LocalDebuggerClearTty>False</LocalDebuggerClearTty-->
+  </PropertyGroup>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|PS3'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|PS3'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|PS3'">
+    <OutDir>$(SolutionDir)Bin\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)Bin\$(Configuration)-Int\</IntDir>
+    <IncludePath>$(ProjectDir)src\;$(SCE_PS3_ROOT)\target\ppu\include;$(SCE_PS3_ROOT)\target\common\include;$(SCE_PS3_ROOT)\host-win32\sn\ppu\include;</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|PS3'">
+    <OutDir>$(SolutionDir)Bin\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)Bin\$(Configuration)-Int\</IntDir>
+    <IncludePath>$(ProjectDir)src\;$(SCE_PS3_ROOT)\target\ppu\include;$(SCE_PS3_ROOT)\target\common\include;$(SCE_PS3_ROOT)\host-win32\sn\ppu\include;</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|PS3'">
+    <ClCompile>
+      <PreprocessorDefinitions>_DEBUG;__CELL_ASSERT__;%(PreprocessorDefinitions);</PreprocessorDefinitions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <OptimizationLevel>Level2</OptimizationLevel>
+      <CppLanguageStd>Cpp11</CppLanguageStd>
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|PS3'">
+    <ClCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions);</PreprocessorDefinitions>
+      <OptimizationLevel>Level2</OptimizationLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <CppLanguageStd>Cpp11</CppLanguageStd>
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <Link />
+    <Link />
+  </ItemDefinitionGroup>
+  <Import Condition="'$(ConfigurationType)' == 'Makefile' and Exists('$(VCTargetsPath)\Platforms\$(Platform)\SCE.Makefile.$(Platform).targets')" Project="$(VCTargetsPath)\Platforms\$(Platform)\SCE.Makefile.$(Platform).targets" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>

@@ -1,0 +1,498 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="src\hooking\method\detour\detour.h">
+      <Filter>src\hooking\method\detour</Filter>
+    </ClInclude>
+    <ClInclude Include="src\filesystem\filesystem.h">
+      <Filter>src\filesystem</Filter>
+    </ClInclude>
+    <ClInclude Include="src\hooking\hooking.h">
+      <Filter>src\hooking</Filter>
+    </ClInclude>
+    <ClInclude Include="src\prx\prx.h">
+      <Filter>src\prx</Filter>
+    </ClInclude>
+    <ClInclude Include="src\pch\pch.h">
+      <Filter>src\pch</Filter>
+    </ClInclude>
+    <ClInclude Include="src\syscalls\syscalls.h">
+      <Filter>src\syscalls</Filter>
+    </ClInclude>
+    <ClInclude Include="src\hooking\method\native\native.h">
+      <Filter>src\hooking\method\native</Filter>
+    </ClInclude>
+    <ClInclude Include="src\rage\natives\call_context.h">
+      <Filter>src\rage\natives</Filter>
+    </ClInclude>
+    <ClInclude Include="src\common\defines.h">
+      <Filter>src\common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\common\memory\addresses.h">
+      <Filter>src\common\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="src\common\templates.h">
+      <Filter>src\common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\common\version.h">
+      <Filter>src\common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\memory\memory.h">
+      <Filter>src\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="src\rage\natives\invoker\invoker.h">
+      <Filter>src\rage\natives\invoker</Filter>
+    </ClInclude>
+    <ClInclude Include="src\rage\scr_native_call_context.h">
+      <Filter>src\rage</Filter>
+    </ClInclude>
+    <ClInclude Include="src\rage\scr_native_registration.h">
+      <Filter>src\rage</Filter>
+    </ClInclude>
+    <ClInclude Include="src\rage\scr_value.h">
+      <Filter>src\rage</Filter>
+    </ClInclude>
+    <ClInclude Include="src\rage\scr_vector.h">
+      <Filter>src\rage</Filter>
+    </ClInclude>
+    <ClInclude Include="src\rage\natives\types.h">
+      <Filter>src\rage\natives</Filter>
+    </ClInclude>
+    <ClInclude Include="src\rage\vectors.h">
+      <Filter>src\rage</Filter>
+    </ClInclude>
+    <ClInclude Include="src\rage\natives\natives.h">
+      <Filter>src\rage\natives</Filter>
+    </ClInclude>
+    <ClInclude Include="src\common\opcodes.h">
+      <Filter>src\common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\logger\logger.h">
+      <Filter>src\logger</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\core.h">
+      <Filter>src\core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ui\manager\manager.h">
+      <Filter>src\ui\manager</Filter>
+    </ClInclude>
+    <ClInclude Include="src\common\map.h">
+      <Filter>src\common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\common\enums.h">
+      <Filter>src\common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ui\types\abstract_option.h">
+      <Filter>src\ui\types</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ui\types\base_option.h">
+      <Filter>src\ui\types</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ui\types\submenu_option.h">
+      <Filter>src\ui\types</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ui\types\submenu.h">
+      <Filter>src\ui\types</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ui\types\toggle_option.h">
+      <Filter>src\ui\types</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ui\math.h">
+      <Filter>src\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ui\classes.h">
+      <Filter>src\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ui\types\option.h">
+      <Filter>src\ui\types</Filter>
+    </ClInclude>
+    <ClInclude Include="src\common\vector.h">
+      <Filter>src\common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\common\stack.h">
+      <Filter>src\common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\common\timer.h">
+      <Filter>src\common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ui\submenus\demo\demo.h">
+      <Filter>src\ui\submenus\demo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ui\types\number_option.h">
+      <Filter>src\ui\types</Filter>
+    </ClInclude>
+    <ClInclude Include="src\script\script.h">
+      <Filter>src\script</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ui\submenus\players\selected_player\selected_player.h">
+      <Filter>src\ui\submenus\players\selected_player</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ui\submenus\players\players.h">
+      <Filter>src\ui\submenus\players</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ui\types\player_option.h">
+      <Filter>src\ui\types</Filter>
+    </ClInclude>
+    <ClInclude Include="src\rage\natives\caller.h">
+      <Filter>src\rage\natives</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ui\submenus\settings\header\header.h">
+      <Filter>src\ui\submenus\settings\header</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ui\submenus\settings\subtitle\subtitle.h">
+      <Filter>src\ui\submenus\settings\subtitle</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ui\submenus\settings\subtitle\text\subtitle_text.h">
+      <Filter>src\ui\submenus\settings\subtitle\text</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ui\submenus\settings\subtitle\background\subtitle_background.h">
+      <Filter>src\ui\submenus\settings\subtitle\background</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ui\submenus\settings\header\text\header_text.h">
+      <Filter>src\ui\submenus\settings\header\text</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ui\submenus\settings\header\background\header_background.h">
+      <Filter>src\ui\submenus\settings\header\background</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ui\submenus\settings\settings.h">
+      <Filter>src\ui\submenus\settings</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ui\submenus\settings\description\description.h">
+      <Filter>src\ui\submenus\settings\description</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ui\submenus\settings\footer\background\footer_background.h">
+      <Filter>src\ui\submenus\settings\footer\background</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ui\submenus\settings\footer\sprite\footer_sprite.h">
+      <Filter>src\ui\submenus\settings\footer\sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ui\submenus\settings\footer\footer.h">
+      <Filter>src\ui\submenus\settings\footer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ui\submenus\settings\description\text\description_text.h">
+      <Filter>src\ui\submenus\settings\description\text</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ui\submenus\settings\description\background\description_background.h">
+      <Filter>src\ui\submenus\settings\description\background</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ui\submenus\settings\options\text\options_text.h">
+      <Filter>src\ui\submenus\settings\options\text</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ui\submenus\settings\options\options.h">
+      <Filter>src\ui\submenus\settings\options</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ui\submenus\settings\options\text\selected\text_selected.h">
+      <Filter>src\ui\submenus\settings\options\text\selected</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ui\submenus\settings\options\sprite\sprite.h">
+      <Filter>src\ui\submenus\settings\options\sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ui\submenus\settings\options\sprite\toggle\toggle.h">
+      <Filter>src\ui\submenus\settings\options\sprite\toggle</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ui\submenus\settings\options\sprite\toggle\selected\toggle_selected.h">
+      <Filter>src\ui\submenus\settings\options\sprite\toggle\selected</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ui\submenus\settings\options\sprite\arrow\selected\arrow_selected.h">
+      <Filter>src\ui\submenus\settings\options\sprite\arrow\selected</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ui\submenus\settings\options\sprite\arrow\arrow.h">
+      <Filter>src\ui\submenus\settings\options\sprite\arrow</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ui\submenus\settings\options\background\options_background.h">
+      <Filter>src\ui\submenus\settings\options\background</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ui\submenus\settings\options\background\selected\options_bg_selected.h">
+      <Filter>src\ui\submenus\settings\options\background\selected</Filter>
+    </ClInclude>
+    <ClInclude Include="src\common\math.h">
+      <Filter>src\common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\common\string.h">
+      <Filter>src\common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\features\features.h">
+      <Filter>src\features</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{3c24f75d-0da1-473e-87c8-2209642ec254}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\common">
+      <UniqueIdentifier>{a70b27ac-4183-41a2-b9ae-133eb79aecc4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\common\memory">
+      <UniqueIdentifier>{5e5306d4-d4ac-49c1-860c-d7f277f819ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\filesystem">
+      <UniqueIdentifier>{c22273de-73ec-41cf-9c1f-7013725a6b9f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\hooking">
+      <UniqueIdentifier>{1fa9ccb9-9e6f-49c3-b8c0-cc3bc901d7df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\hooking\hooks">
+      <UniqueIdentifier>{785f47be-c7ec-4fca-a944-6b331b315486}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\hooking\method">
+      <UniqueIdentifier>{ec3b48bd-bb45-4ea5-939d-fdf05e411ca9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\hooking\method\detour">
+      <UniqueIdentifier>{7623c721-b99d-4eb9-9c96-e858c72de534}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\hooking\method\native">
+      <UniqueIdentifier>{0ff31d33-4268-4385-a17e-a9eefe709d08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\memory">
+      <UniqueIdentifier>{7d883168-16ab-4c63-8adf-914c97cc2de1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\pch">
+      <UniqueIdentifier>{e23f60f0-e12c-4df0-b74b-d7dbbeffa1f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\prx">
+      <UniqueIdentifier>{0cab1f2c-deab-41ed-bf4d-1f5326cb46d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\rage">
+      <UniqueIdentifier>{1d5a7b7d-1fac-43de-b78f-df22725129b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\rage\natives">
+      <UniqueIdentifier>{b08c25ed-866d-42e5-8d5e-63cc5972c122}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\rage\natives\invoker">
+      <UniqueIdentifier>{4bad8b26-a023-4e32-a1b7-ab0c125bdafa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\syscalls">
+      <UniqueIdentifier>{8f5d40d8-9dda-420b-a5f9-147fd56124c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\core">
+      <UniqueIdentifier>{9695c2eb-1216-4ebb-89cb-840c136896ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\logger">
+      <UniqueIdentifier>{099baa5a-5c20-415a-90e0-387359b867dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui">
+      <UniqueIdentifier>{460cab34-e617-4e31-977a-5592eeea4697}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui\manager">
+      <UniqueIdentifier>{4ef85a75-902d-455a-84e8-e31e9fb1bcd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui\submenus">
+      <UniqueIdentifier>{190dfe0c-b6d7-4dde-9b46-f8e283b674d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui\types">
+      <UniqueIdentifier>{acf1bff0-2ee8-45f8-8f91-eb67d40a0758}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui\submenus\demo">
+      <UniqueIdentifier>{44f8e125-7860-4ff9-89f0-da640019950c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui\submenus\settings">
+      <UniqueIdentifier>{404a1db2-4a5f-4ee0-9158-30aa673c6a72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\script">
+      <UniqueIdentifier>{8135fceb-4ab1-4d58-b600-a68f7f56a6f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui\submenus\players">
+      <UniqueIdentifier>{fc5cc0dc-e1dd-4680-b1c9-cf906cb9a91a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui\submenus\players\selected_player">
+      <UniqueIdentifier>{ddb0ba4e-8f82-496d-99d4-3eb8685c8258}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui\submenus\settings\header">
+      <UniqueIdentifier>{d0b270c6-4884-4f6c-8300-4f1ce51fe605}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui\submenus\settings\header\background">
+      <UniqueIdentifier>{e1fa032f-7594-4f3a-8720-e93f09088a44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui\submenus\settings\header\text">
+      <UniqueIdentifier>{17184542-e508-453d-84de-2a17327619e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui\submenus\settings\subtitle">
+      <UniqueIdentifier>{cfcbcf93-2732-4b6d-8bd7-b650b500047e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui\submenus\settings\subtitle\text">
+      <UniqueIdentifier>{728d03b7-eda9-4a98-afc7-5839f043e66a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui\submenus\settings\subtitle\background">
+      <UniqueIdentifier>{7051d9e5-39af-489f-8259-16cf24fc5661}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui\submenus\settings\footer">
+      <UniqueIdentifier>{3361185f-2ee9-47a0-8e43-5a72bbe2f335}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui\submenus\settings\options">
+      <UniqueIdentifier>{a5ab6c2f-1033-47f6-ba55-8ca640990a64}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui\submenus\settings\description">
+      <UniqueIdentifier>{38d75f88-d5c4-4f48-8e03-129aa7242f12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui\submenus\settings\description\text">
+      <UniqueIdentifier>{3e9c046c-72db-451e-898a-7ac5677400d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui\submenus\settings\description\background">
+      <UniqueIdentifier>{ffe01c2e-e027-48db-a1a8-0c7c18bb52ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui\submenus\settings\footer\sprite">
+      <UniqueIdentifier>{a5cb8905-8655-4213-a0f3-9d538d5c6cd5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui\submenus\settings\footer\background">
+      <UniqueIdentifier>{4dc97937-6d09-4e2d-a4af-5b33231b495e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui\submenus\settings\options\text">
+      <UniqueIdentifier>{ed39f6d7-6593-4592-a7a4-c8f1ab92e846}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui\submenus\settings\options\sprite">
+      <UniqueIdentifier>{b6f0b061-4100-44df-8088-faedfce301b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui\submenus\settings\options\background">
+      <UniqueIdentifier>{0c634a8c-bb8b-4102-b1bf-f15ada9d11c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui\submenus\settings\options\text\selected">
+      <UniqueIdentifier>{4cfa21e1-7ea8-43a0-b500-552a0d2bb1b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui\submenus\settings\options\background\selected">
+      <UniqueIdentifier>{1f7e8cfb-564a-4cfc-9d6e-3c8de05e5efd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui\submenus\settings\options\sprite\arrow">
+      <UniqueIdentifier>{5ee659b5-add1-40ab-9d28-c8d713d700f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui\submenus\settings\options\sprite\toggle">
+      <UniqueIdentifier>{786e2f99-9f07-4329-a05c-38e7d500e4f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui\submenus\settings\options\sprite\toggle\selected">
+      <UniqueIdentifier>{24b66a15-4756-43dd-93d0-99817a068bb8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui\submenus\settings\options\sprite\arrow\selected">
+      <UniqueIdentifier>{bb41d70b-bc55-41a5-bdfa-0b2617360486}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\features">
+      <UniqueIdentifier>{60c52f4b-2d24-46ca-a35d-75b141f223f5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\hooking\method\detour\detour.cpp">
+      <Filter>src\hooking\method\detour</Filter>
+    </ClCompile>
+    <ClCompile Include="src\filesystem\filesystem.cpp">
+      <Filter>src\filesystem</Filter>
+    </ClCompile>
+    <ClCompile Include="src\hooking\hooking.cpp">
+      <Filter>src\hooking</Filter>
+    </ClCompile>
+    <ClCompile Include="src\hooking\hooks\network_is_signed_online.cpp">
+      <Filter>src\hooking\hooks</Filter>
+    </ClCompile>
+    <ClCompile Include="src\prx\prx.cpp">
+      <Filter>src\prx</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pch\pch.cpp">
+      <Filter>src\pch</Filter>
+    </ClCompile>
+    <ClCompile Include="src\syscalls\syscalls.cpp">
+      <Filter>src\syscalls</Filter>
+    </ClCompile>
+    <ClCompile Include="src\hooking\method\native\native.cpp">
+      <Filter>src\hooking\method\native</Filter>
+    </ClCompile>
+    <ClCompile Include="src\memory\memory.cpp">
+      <Filter>src\memory</Filter>
+    </ClCompile>
+    <ClCompile Include="src\rage\natives\invoker\invoker.cpp">
+      <Filter>src\rage\natives\invoker</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\core.cpp">
+      <Filter>src\core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\logger\logger.cpp">
+      <Filter>src\logger</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\manager\manager.cpp">
+      <Filter>src\ui\manager</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\submenus\demo\demo.cpp">
+      <Filter>src\ui\submenus\demo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\script\script.cpp">
+      <Filter>src\script</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\submenus\players\selected_player\selected_player.cpp">
+      <Filter>src\ui\submenus\players\selected_player</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\submenus\players\players.cpp">
+      <Filter>src\ui\submenus\players</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\submenus\settings\header\header.cpp">
+      <Filter>src\ui\submenus\settings\header</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\submenus\settings\subtitle\subtitle.cpp">
+      <Filter>src\ui\submenus\settings\subtitle</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\submenus\settings\subtitle\text\subtitle_text.cpp">
+      <Filter>src\ui\submenus\settings\subtitle\text</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\submenus\settings\subtitle\background\subtitle_background.cpp">
+      <Filter>src\ui\submenus\settings\subtitle\background</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\submenus\settings\header\text\header_text.cpp">
+      <Filter>src\ui\submenus\settings\header\text</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\submenus\settings\header\background\header_background.cpp">
+      <Filter>src\ui\submenus\settings\header\background</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\submenus\settings\settings.cpp">
+      <Filter>src\ui\submenus\settings</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\submenus\settings\description\description.cpp">
+      <Filter>src\ui\submenus\settings\description</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\submenus\settings\footer\background\footer_background.cpp">
+      <Filter>src\ui\submenus\settings\footer\background</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\submenus\settings\footer\sprite\footer_sprite.cpp">
+      <Filter>src\ui\submenus\settings\footer\sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\submenus\settings\footer\footer.cpp">
+      <Filter>src\ui\submenus\settings\footer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\submenus\settings\description\text\description_text.cpp">
+      <Filter>src\ui\submenus\settings\description\text</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\submenus\settings\description\background\description_background.cpp">
+      <Filter>src\ui\submenus\settings\description\background</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\submenus\settings\options\text\options_text.cpp">
+      <Filter>src\ui\submenus\settings\options\text</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\submenus\settings\options\options.cpp">
+      <Filter>src\ui\submenus\settings\options</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\submenus\settings\options\text\selected\text_selected.cpp">
+      <Filter>src\ui\submenus\settings\options\text\selected</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\submenus\settings\options\sprite\sprite.cpp">
+      <Filter>src\ui\submenus\settings\options\sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\submenus\settings\options\sprite\toggle\toggle.cpp">
+      <Filter>src\ui\submenus\settings\options\sprite\toggle</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\submenus\settings\options\sprite\toggle\selected\toggle_selected.cpp">
+      <Filter>src\ui\submenus\settings\options\sprite\toggle\selected</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\submenus\settings\options\sprite\arrow\selected\arrow_selected.cpp">
+      <Filter>src\ui\submenus\settings\options\sprite\arrow\selected</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\submenus\settings\options\sprite\arrow\arrow.cpp">
+      <Filter>src\ui\submenus\settings\options\sprite\arrow</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\submenus\settings\options\background\options_background.cpp">
+      <Filter>src\ui\submenus\settings\options\background</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\submenus\settings\options\background\selected\options_bg_selected.cpp">
+      <Filter>src\ui\submenus\settings\options\background\selected</Filter>
+    </ClCompile>
+    <ClCompile Include="src\features\features.cpp">
+      <Filter>src\features</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
