@@ -8,6 +8,7 @@
 # A huge thanks
  * Pliskin, someone who was so helpful when no one else was. He gave me lots of very useful tips on things only someone well versed in the PS3 would know. He also gave lots of extremely useful tools. You're the best. Love you, man.
  * Gopro2027, for open sourcring his Paradise project. There's a reason I said "I added" instead of "I wrote", as I snagged some math functions from Paradise. Sorry about that, lol.
+ * A forgotten mention, the 3TA Online team. Without them, this wouldn't have been possible. Thanks for bringing back memories of the old Grand Theft Auto Online. It was gone too soon.
 # Where to contact me
  * Discord is the way to go, Vali#0004 is my handle.
  * However, I do have a social page with all my other contact info.
