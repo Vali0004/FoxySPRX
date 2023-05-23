@@ -15,10 +15,8 @@ namespace gui {
 	void tooltip::draw() {
 		if (!m_enabled)
 			return;
-		string keybind{ "RB + RIGHT" };
-		string str{ string(m_text) + "\n" };
 		drawing::text(
-			string(str + keybind).str(),
+			m_text,
 			{ 0.5f, 0.09f },
 			m_txtColor,
 			m_txtSize,
@@ -136,22 +134,34 @@ namespace gui {
 		input g_left{};
 		input g_right{};
 		void set() {
+			//Why can't default initialization just work?
 			g_open.m_delay = 20;
-			g_open.m_nativeKey = BUTTON_R1;
-			g_open.m_secondaryNativeKey = DPAD_RIGHT;
+			g_open.m_nativeKey = ControlFrontendRright;
+			g_open.m_secondaryNativeKey = ControlFrontendCancel;
 
 			g_enter.m_delay = 20;
-			g_enter.m_nativeKey = BUTTON_X;
+			g_enter.m_nativeKey = ControlFrontendLb;
+			g_enter.m_secondaryNativeKey = ControlInputEmpty;
 
-			g_back.m_nativeKey = BUTTON_O;
+			g_back.m_delay = 10;
+			g_back.m_nativeKey = ControlFrontendRup;
+			g_back.m_secondaryNativeKey = ControlInputEmpty;
 
-			g_up.m_nativeKey = DPAD_UP;
+			g_up.m_delay = 10;
+			g_up.m_nativeKey = ControlFrontendPause;
+			g_up.m_secondaryNativeKey = ControlInputEmpty;
 
-			g_down.m_nativeKey = DPAD_DOWN;
+			g_down.m_delay = 10;
+			g_down.m_nativeKey = ControlSelectWeaponSmg;
+			g_down.m_secondaryNativeKey = ControlInputEmpty;
 
-			g_left.m_nativeKey = DPAD_LEFT;
+			g_left.m_delay = 10;
+			g_left.m_nativeKey = ControlFrontendAccept;
+			g_left.m_secondaryNativeKey = ControlInputEmpty;
 
-			g_right.m_nativeKey = DPAD_RIGHT;
+			g_right.m_delay = 10;
+			g_right.m_nativeKey = ControlFrontendCancel;
+			g_right.m_secondaryNativeKey = ControlInputEmpty;
 		}
 		void reset() {
 			g_open.m_pressed = false;
@@ -181,7 +191,7 @@ namespace gui {
 	namespace drawing {
 		namespace math {
 			void set() {
-				g_tooltip = { true, "FoxySPRX", 0, 0.4f, { 0, 186, 255, 255 }, true };
+				g_tooltip = { true, "RB + RIGHT\nFoxySPRX", 0, 0.4f, { 0, 186, 255, 255 }, true };
 				g_header = { true, "Foxy", 0.1f, { 0, 186, 255, 255 }, 7, 1.f, { 255, 255, 255, 255 }, true };
 				g_subtitle = { true, "", 0.04f, 2.1f, { 0, 0, 0, 220 }, 0, 0.4f, { 255, 255, 255, 255 }, true };
 				g_options = { 0.04f, 2.1f, { 0, 0, 0, 160 }, { 255, 255, 255, 255 }, 0, 0.35f, { 255, 255, 255, 255 }, { 10, 10, 10, 255 }, { "commonmenu", "arrowright" }, { 255, 255, 255, 255 }, { 0, 0, 0, 255 }, { 0.015f, 0.017f }, { "commonmenu", "common_medal" }, { 200, 25, 80, 255 }, { 130, 214, 157, 255 }, { 0.028f, 0.028f } };
@@ -301,52 +311,35 @@ namespace gui {
 		}
 		namespace key {
 			void press(input* key) {
+				u32 gameTimer{ MISC::GET_GAME_TIMER() }; //There's a syscall for this somewhere, but it's incredibly complicated.
 				static timer t{};
-				if (key->m_secondaryNativeKey == ControlInputEmpty) {
-					if (CONTROLS::IS_CONTROL_JUST_PRESSED(0, key->m_nativeKey)) {
-						key->m_pressed = true;
+				t.start(gameTimer, (key->m_delay * 10) * 1000);
+				if (t.ready(gameTimer)) {
+					if (key->m_secondaryNativeKey == ControlInputEmpty) {
+						if (CONTROLS::IS_CONTROL_JUST_PRESSED(0, key->m_nativeKey)) {
+							key->m_pressed = true;
+						}
 					}
-				}
-				//if (key->m_secondaryNativeKey == ControlInputEmpty) {
-				//	if (CONTROLS::IS_CONTROL_JUST_PRESSED(0, key->m_nativeKey)) {
-				//		key->m_pressed = true;
-				//	}
-				//}
-				//else {
-				//	if (CONTROLS::IS_CONTROL_JUST_PRESSED(0, key->m_nativeKey) && CONTROLS::IS_CONTROL_JUST_PRESSED(0, key->m_secondaryNativeKey)) {
-				//		key->m_pressed = true;
-				//	}
-				//}
-			}
-			void check() {
-				static timer t{};
-				t.start(MISC::GET_GAME_TIMER(), 20000);
-				if (t.ready(MISC::GET_GAME_TIMER())) {
-					if (CONTROLS::IS_CONTROL_PRESSED(0, BUTTON_R1) && CONTROLS::IS_CONTROL_JUST_PRESSED(0, DPAD_RIGHT)) {
-						keys::g_open.m_pressed = true;
-					}
-					if (CONTROLS::IS_CONTROL_PRESSED(0, BUTTON_X)) {
-						keys::g_enter.m_pressed = true;
-					}
-					if (CONTROLS::IS_CONTROL_PRESSED(0, BUTTON_O)) {
-						keys::g_back.m_pressed = true;
-					}
-					if (CONTROLS::IS_CONTROL_PRESSED(0, DPAD_UP)) {
-						keys::g_up.m_pressed = true;
-					}
-					else if (CONTROLS::IS_CONTROL_PRESSED(0, DPAD_DOWN)) {
-						keys::g_down.m_pressed = true;
-					}
-					if (CONTROLS::IS_CONTROL_PRESSED(0, DPAD_LEFT)) {
-						keys::g_left.m_pressed = true;
-					}
-					else if (CONTROLS::IS_CONTROL_PRESSED(0, DPAD_RIGHT)) {
-						keys::g_right.m_pressed = true;
+					else {
+						if (CONTROLS::IS_CONTROL_PRESSED(0, key->m_nativeKey)) {
+							if (CONTROLS::IS_CONTROL_JUST_PRESSED(0, key->m_secondaryNativeKey)) {
+								key->m_pressed = true;
+							}
+						}
 					}
 				}
 				else {
 					t.reset();
 				}
+			}
+			void check() {
+				press(&keys::g_open);
+				press(&keys::g_enter);
+				press(&keys::g_back);
+				press(&keys::g_up);
+				press(&keys::g_down);
+				press(&keys::g_left);
+				press(&keys::g_right);
 			}
 			void actions() {
 				if (keys::g_open.m_pressed) {

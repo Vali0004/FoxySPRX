@@ -19,6 +19,8 @@
     <ClCompile Include="src\hooking\method\detour\detour.cpp" />
     <ClCompile Include="src\logger\logger.cpp" />
     <ClCompile Include="src\memory\memory.cpp" />
+    <ClCompile Include="src\memory\pointers\pointers.cpp" />
+    <ClCompile Include="src\memory\scanner.cpp" />
     <ClCompile Include="src\pch\pch.cpp" />
     <ClCompile Include="src\prx\prx.cpp" />
     <ClCompile Include="src\rage\natives\invoker\invoker.cpp" />
@@ -73,6 +75,8 @@
     <ClInclude Include="src\include.h" />
     <ClInclude Include="src\logger\logger.h" />
     <ClInclude Include="src\memory\memory.h" />
+    <ClInclude Include="src\memory\pointers\pointers.h" />
+    <ClInclude Include="src\memory\scanner.h" />
     <ClInclude Include="src\rage\natives\caller.h" />
     <ClInclude Include="src\rage\natives\natives.h" />
     <ClInclude Include="src\pch\pch.h" />

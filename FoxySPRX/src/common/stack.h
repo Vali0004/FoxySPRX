@@ -21,7 +21,7 @@ public:
     void pop() {
         if (m_size > 0) {
             --m_size;
-            m_data[m_size].~t();
+           m_data[m_size].~t();
         }
     }
     t& top() {

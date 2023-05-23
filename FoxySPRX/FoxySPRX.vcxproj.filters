@@ -217,6 +217,12 @@
     <ClInclude Include="src\features\features.h">
       <Filter>src\features</Filter>
     </ClInclude>
+    <ClInclude Include="src\memory\pointers\pointers.h">
+      <Filter>src\memory\pointers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\memory\scanner.h">
+      <Filter>src\memory</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -369,6 +375,9 @@
     <Filter Include="src\features">
       <UniqueIdentifier>{60c52f4b-2d24-46ca-a35d-75b141f223f5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\memory\pointers">
+      <UniqueIdentifier>{26696662-9c84-402a-8360-ffa83b29cfd3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\hooking\method\detour\detour.cpp">
@@ -493,6 +502,12 @@
     </ClCompile>
     <ClCompile Include="src\features\features.cpp">
       <Filter>src\features</Filter>
+    </ClCompile>
+    <ClCompile Include="src\memory\pointers\pointers.cpp">
+      <Filter>src\memory\pointers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\memory\scanner.cpp">
+      <Filter>src\memory</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

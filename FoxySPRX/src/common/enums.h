@@ -20,7 +20,7 @@ enum eButtons {
 };
 
 enum eControllerInputs {
-	ControlInputEmpty = -1,
+	ControlInputEmpty = 420,
 	ControlNextCamera = 0,
 	ControlLookLeftRight = 1,
 	ControlLookUpDown = 2,

@@ -29,9 +29,9 @@ namespace script {
 		GRAPHICS::FORCE_RENDER_IN_GAME_UI(TRUE);
 		//Allows us to draw above the pause menu
 		GRAPHICS::SET_SCRIPT_GFX_DRAW_ORDER(8);
-		/*//Allows rendering of paused elements
+		//Allows rendering of paused elements
 		GRAPHICS::TOGGLE_PAUSED_RENDERPHASES(TRUE);
-		//Draw behind (actually, if set the GFX order to 8, it's more of a way to draw in transition)
+		/*//Draw behind (actually, if set the GFX order to 8, it's more of a way to draw in transition)
 		GRAPHICS::SET_SCRIPT_GFX_DRAW_BEHIND_PAUSEMENU(TRUE);
 		//Grabs pausemenu ownership to avoid pausing (not currently possible to stop pausing in story)
 		GRAPHICS::GRAB_PAUSEMENU_OWNERSHIP();
