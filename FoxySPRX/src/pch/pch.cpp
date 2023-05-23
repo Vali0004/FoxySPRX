@@ -40,11 +40,11 @@ string itos(s32 n) {
 }
 //Percision can just eat dick ig, no real choice because anything eats memory like a motherfucker
 string dtos(db n) {
-	string str{ 32 };
+	char str[32]{};
 	s32 wholenumber{ (int)n };
 	n -= wholenumber;
 	n *= 100;
-	sprintf(str.data(), "%d.%d", wholenumber, (int)n);
+	sprintf(str, "%d.%d", wholenumber, (int)n);
 	return str;
 }
 string ftos(fp n) {
