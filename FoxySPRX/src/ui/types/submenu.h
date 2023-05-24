@@ -2,24 +2,18 @@
 #include "include.h"
 #include "abstract_option.h"
 #define DEF_SUB_H(n) \
-	struct n : submenu { \
+	class n : public submenu { \
+	public: \
 		n(); \
 	};
-#define DEF_SUB(n, sn) \
-	n::n() : submenu(#sn, [](submenu& submenu) { \
-		callback##n(submenu); \
-	}) {} \
 
-struct submenu {
+class submenu {
+public:
 	submenu(ccp name = "", fnptr<void(submenu&)> action = nullptr) : m_name(name), m_action(action) {}
-	ccp m_name{};
-	vectorr<abstractOption*> m_options{};
-	u64 m_current{};
-	fnptr<void(submenu&)> m_action{};
-
+public:
 	template <typename t>
 	void add(t option) {
-		m_options.add(new t(option));
+		m_options.push_back(new t(option));
 	}
 	void action(eActionType type) {
 		switch (type) {
@@ -53,4 +47,9 @@ struct submenu {
 		if (m_current >= m_options.size())
 			m_current = 0;
 	}
+public:
+	ccp m_name{};
+	vectorr<abstractOption*> m_options{};
+	u64 m_current{};
+	fnptr<void(submenu&)> m_action{};
 };

@@ -6,7 +6,7 @@
 template <typename t>
 class vectorr {
 public:
-	void create(s32 s) {
+	void reserve(s32 s) {
 		preallocatedSize = s;
 		table = (t*)malloc(sizeof(t) * preallocatedSize);
 	}
@@ -17,31 +17,35 @@ public:
 	bool empty() {
 		return !table && !count;
 	}
-	void realloc(s32 newSize) {
-		t* tmp{ table };
-		memcpy(tmp, table, count);
-		table = (t*)malloc(sizeof(t) * newSize);
-		for (u32 i{}; i != count; ++i) {
-			table[i] = tmp[i];
-		}
-	}
-	void add(t item) {
+	void push_back(t item) {
 		t tmp{ item };
-		if (count > preallocatedSize || !preallocatedSize)
-			realloc(count + 1);
+		if (size() > preallocatedSize || !preallocatedSize)
+			realloc(size() + 1);
 		table[count] = tmp;
 		count++;
 	}
 	t get(s32 index) {
-		if (index > count)
+		if (index > size())
 			return NULL;
-		return table[index];
+		return data()[index];
 	}
 	s32 size() {
 		return count;
 	}
 	t operator[](int index) {
 		return get(index);
+	}
+	t* data() {
+		return table;
+	}
+private:
+	void realloc(s32 newSize) {
+		t* tmp{ table };
+		memcpy(tmp, table, size());
+		table = (t*)malloc(sizeof(t) * newSize);
+		for (u32 i{}; i != size(); ++i) {
+			table[i] = tmp[i];
+		}
 	}
 	t* table{};
 	s32 count{};

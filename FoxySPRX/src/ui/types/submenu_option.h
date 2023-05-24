@@ -2,10 +2,11 @@
 #include "base_option.h"
 #include "ui/types/submenu.h"
 
-struct submenuOption : public baseOption {
+class submenuOption : public baseOption {
+public:
 	submenuOption(ccp name, ccp description, submenu sub, fnptr<void()> action = nullptr) : baseOption(name, description, action), m_submenu(sub) {}
 	submenuOption(ccp name, submenu sub, fnptr<void()> action = nullptr) : submenuOption(name, ccp(), sub, action) {}
-
+public:
 	void draw(bool selected) override {
 		GRAPHICS::SET_SCRIPT_GFX_DRAW_ORDER(8);
 		gui::drawing::image(
@@ -27,5 +28,6 @@ struct submenuOption : public baseOption {
 		}
 		baseOption::action(type);
 	}
+private:
 	submenu m_submenu;
 };

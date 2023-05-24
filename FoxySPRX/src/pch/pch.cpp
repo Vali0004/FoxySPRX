@@ -1,10 +1,7 @@
 #include "pch.h"
-#include "common/memory/addresses.h"
 #include "rage/scr_native_registration.h"
 #include "common/string.h"
 #include "common/math.h"
-addressTable g_addresses{};
-rage::scrNativeRegistration** g_registrationTable{};
 
 void reverse(buf_t str, s32 length) {
 	s32 start = 0;
@@ -50,40 +47,28 @@ string dtos(db n) {
 string ftos(fp n) {
 	return dtos(static_cast<db>(n));
 }
-s32 lenstr(ccp str) {
-	s32 len{};
-	while (str[len] != '\0') {
-		++len;
-	}
-	return len;
-}
-void concat_str(buf_t dest, ccp src, u64 count) {
-	buf_t tmp{ dest };
-	s32 destSize{ lenstr(dest) };
-	strncpy(&tmp[destSize], src, count);
-}
 ccp string_combine(ccp str1, ccp str2) {
-	s32 len1 = lenstr(str1), len2 = lenstr(str2);
+	s32 len1 = strlen(str1), len2 = strlen(str2);
 	buf_t result = new char[len1 + len2 + 1];
 	strncpy(result, str1, len1 + len2 + 1);
-	concat_str(result, str2, len2);
+	strncat(result, str2, len2);
 	result[len1 + len2] = '\0';
 	return result;
 }
 ccp substr(ccp str, s32 start, s32 end) {
 	buf_t tmp{};
-	strncpy(tmp, str, lenstr(str));
+	strncpy(tmp, str, strlen(str));
 	if (end) {
 		return &tmp[start];
 	}
 	else if (start) {
-		strncpy(tmp, (ccp)(str + (end - 1)), lenstr(str));
+		strncpy(tmp, (ccp)(str + (end - 1)), strlen(str));
 		return tmp;
 	}
 	return str;
 }
 s32 find_last_of(ccp str, char c) {
-	s32 len = lenstr(str);
+	s32 len = strlen(str);
 	for (s32 i = len - 1; i >= 0; i--) {
 		if (str[i] == c) {
 			return i;
@@ -189,7 +174,7 @@ string::string() {
 	size_ = 0;
 }
 string::string(ccp str) {
-	size_ = lenstr(str);
+	size_ = strlen(str);
 	data_ = new char[size_ + 1];
 	strncpy(data_, str, size_ + 1);
 }
@@ -213,7 +198,7 @@ void string::insert(u64 pos, ccp str) {
 	if (pos > size_) {
 		return;
 	}
-	u64 str_len = lenstr(str);
+	u64 str_len = strlen(str);
 	buf_t new_data = new char[size_ + str_len + 1];
 	strncpy(new_data, data_, pos);
 	strncpy(new_data + pos, str, str_len);
@@ -236,15 +221,15 @@ void string::insert(u64 pos, char c) {
 }
 template <u64 s>
 void string::append(const char(&str)[s]) {
-	concat_str(data_, str, s);
+	strncat(data_, str, s);
 }
 void string::append(string str) {
-	concat_str(data_, str.str(), str.size());
+	strncat(data_, str.str(), str.size());
 	str.clear();
 }
 void string::append(char c) {
 	char str[2] = { c, '\0' };
-	concat_str(data_, str, 2);
+	strncat(data_, str, 2);
 	delete[] str;
 }
 string& string::operator+(s32 value) {

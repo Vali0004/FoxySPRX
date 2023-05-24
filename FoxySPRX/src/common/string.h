@@ -64,8 +64,8 @@ public:
 	string& operator+(fp value);
 	string& operator+(const string& other);
 	string& operator=(const string& other);
-	string operator[](u64 index) {
-		return &begin()[index];
+	char operator[](u64 index) {
+		return begin()[index];
 	}
 private:
 	buf_t data_{};

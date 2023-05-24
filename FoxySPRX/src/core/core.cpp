@@ -1,23 +1,15 @@
 #include "core/core.h"
-#include "common/memory/addresses.h"
 #include "rage/natives/invoker/invoker.h"
 #include "hooking/hooking.h"
 #include "logger/logger.h"
 #include "ui/manager/manager.h"
+#include "memory/pointers/pointers.h"
 
-void createAddressTable() {
-	g_addresses.add("RT", SHIFT_ADDRESS(0x1DC7FB0));
-	g_logger.send("Debug", "Address to RT: 0x%llX", g_addresses.get("RT"));
-}
-void setPointers() {
-	g_registrationTable = g_addresses.ptr<rage::scrNativeRegistration**>("RT");
-}
 namespace core {
 	ppu_thr_t threadId{ SYS_PPU_THREAD_ID_INVALID };
 	void preinit() {
 		g_logger.create("log.txt");
-		createAddressTable();
-		setPointers();
+		pointers::scan();
 	}
 	void init() {
 		g_hooking = new hooking();
@@ -26,7 +18,6 @@ namespace core {
 	void uninit() {
 		g_hooking->disable();
 		delete g_hooking;
-		g_addresses.destory();
 		gui::g_menus.clear();
 	}
 	void entry(u64 a) {

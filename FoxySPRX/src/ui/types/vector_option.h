@@ -3,10 +3,10 @@
 #include "base_option.h"
 
 template <typename t>
-class numberOption : public baseOption {
+class vectorOption : public baseOption {
 public:
-	numberOption(ccp name, ccp description, t& value, t min, t max, t step = t(1), fnptr<void()> action = nullptr) : baseOption(name, description, action), m_value(&value), m_min(min), m_max(max), m_step(step) {}
-	numberOption(ccp name, t& value, t min, t max, t step = t(1), fnptr<void()> action = nullptr) : numberOption(name, ccp(), value, min, max, step, action) {}
+	vectorOption(ccp name, ccp description, vectorr<t> value, s64& pos, fnptr<void()> action = nullptr) : baseOption(name, description, action), m_value(value), m_pos(&pos) {}
+	vectorOption(ccp name, vectorr<t> value, s64& pos, fnptr<void()> action = nullptr) : vectorOption(name, ccp(), value, pos, action) {}
 public:
 	void draw(bool selected) override {
 		const string str{ ftos(*m_value) };
@@ -44,8 +44,6 @@ public:
 		baseOption::action(type);
 	}
 private:
-	t* m_value{};
-	t m_min{};
-	t m_max{};
-	t m_step{};
+	vectorr<t> m_value{};
+	s64* m_pos{};
 };

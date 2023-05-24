@@ -26,3 +26,20 @@ s32 ReadProcessMemory(u32 pid, void* address, void* data, size_t size) {
     useHenSyscalls = true;
     return PS3MAPIGetMemory(pid, address, data, size);
 }
+sys_prx_id_t GetModuleHandle(ccp moduleName) {
+    if (moduleName)
+        return sys_prx_get_module_id_by_name(moduleName, 0, nullptr);
+    return sys_prx_get_my_module_id();
+}
+sys_prx_module_info_t GetModuleInfo(sys_prx_id_t handle) {
+    sys_prx_module_info_t info{};
+    static sys_prx_segment_info_t segments[10]{};
+    static char filename[SYS_PRX_MODULE_FILENAME_SIZE]{};
+    info.size = sizeof(info);
+    info.segments = segments;
+    info.segments_num = sizeof(segments) / sizeof(sys_prx_segment_info_t);
+    info.filename = filename;
+    info.filename_size = sizeof(filename);
+    sys_prx_get_module_info(handle, 0, &info);
+    return info;
+}

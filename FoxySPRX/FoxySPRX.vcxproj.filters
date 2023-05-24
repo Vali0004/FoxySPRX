@@ -28,9 +28,6 @@
     <ClInclude Include="src\common\defines.h">
       <Filter>src\common</Filter>
     </ClInclude>
-    <ClInclude Include="src\common\memory\addresses.h">
-      <Filter>src\common\memory</Filter>
-    </ClInclude>
     <ClInclude Include="src\common\templates.h">
       <Filter>src\common</Filter>
     </ClInclude>
@@ -220,9 +217,19 @@
     <ClInclude Include="src\memory\pointers\pointers.h">
       <Filter>src\memory\pointers</Filter>
     </ClInclude>
-    <ClInclude Include="src\memory\scanner.h">
+    <ClInclude Include="src\memory\util.h">
       <Filter>src\memory</Filter>
     </ClInclude>
+    <ClInclude Include="src\ui\types\vector_option.h">
+      <Filter>src\ui\types</Filter>
+    </ClInclude>
+    <ClInclude Include="src\common\optional.h">
+      <Filter>src\common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\memory\module.h">
+      <Filter>src\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="src\memory\scanner.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -230,9 +237,6 @@
     </Filter>
     <Filter Include="src\common">
       <UniqueIdentifier>{a70b27ac-4183-41a2-b9ae-133eb79aecc4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\common\memory">
-      <UniqueIdentifier>{5e5306d4-d4ac-49c1-860c-d7f277f819ef}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\filesystem">
       <UniqueIdentifier>{c22273de-73ec-41cf-9c1f-7013725a6b9f}</UniqueIdentifier>
@@ -506,7 +510,7 @@
     <ClCompile Include="src\memory\pointers\pointers.cpp">
       <Filter>src\memory\pointers</Filter>
     </ClCompile>
-    <ClCompile Include="src\memory\scanner.cpp">
+    <ClCompile Include="src\memory\util.cpp">
       <Filter>src\memory</Filter>
     </ClCompile>
   </ItemGroup>

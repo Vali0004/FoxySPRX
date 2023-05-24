@@ -3,9 +3,10 @@
 #include "rage/natives/natives.h"
 #include "ui/manager/manager.h"
 
-struct baseOption : public abstractOption {
+class baseOption : public abstractOption {
+public:
 	baseOption(ccp name, ccp description, fnptr<void()> action) : abstractOption(name, description), m_action(action) {}
-
+public:
 	void draw(bool selected) override {
 		GRAPHICS::SET_SCRIPT_GFX_DRAW_ORDER(7);
 		gui::drawing::rectangle({ g_pos.x, g_base + (g_options.m_size / 2.f) }, { g_width, g_options.m_size }, g_options.rect(selected));
@@ -27,5 +28,6 @@ struct baseOption : public abstractOption {
 		} break;
 		}
 	}
+private:
 	fnptr<void()> m_action{};
 };

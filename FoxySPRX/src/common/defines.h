@@ -1,5 +1,4 @@
 #pragma once
-#include "version.h"
 #define MARK_AS_EXECUTABLE __attribute__((section(".text")))
 #define SLEEP(t) sys_timer_sleep(t);
 #define USLEEP(t) sys_timer_usleep(t * 1000);
@@ -19,6 +18,16 @@
 #define malloc _sys_malloc
 #define free _sys_free
 #define memalign _sys_memalign
+#define memchr _sys_memchr
 #define memcmp _sys_memcmp
 #define memcpy _sys_memcpy
 #define memmove _sys_memmove
+#define memset _sys_memset
+#define strrchr _sys_strrchr
+#define strcat _sys_strcat
+#define strchr _sys_strchr
+#define strcmp _sys_strcmp
+#define strcpy _sys_strcpy
+#define strlen _sys_strlen
+#define tolower _sys_tolower
+#define toupper _sys_toupper

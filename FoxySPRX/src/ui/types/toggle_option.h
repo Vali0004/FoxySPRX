@@ -2,9 +2,10 @@
 #include "include.h"
 
 struct toggleOption : public baseOption {
+public:
 	toggleOption(ccp name, ccp description, bool& toggle, fnptr<void()> action = nullptr) : baseOption(name, description, action), m_toggle(&toggle) {}
 	toggleOption(ccp name, bool& toggle, fnptr<void()> action = nullptr) : toggleOption(name, ccp(), toggle, action) {}
-
+public:
 	void draw(bool selected) override {
 		GRAPHICS::SET_SCRIPT_GFX_DRAW_ORDER(8);
 		gui::drawing::image(
@@ -26,5 +27,6 @@ struct toggleOption : public baseOption {
 		}
 		baseOption::action(type);
 	}
+private:
 	bool* m_toggle{};
 };

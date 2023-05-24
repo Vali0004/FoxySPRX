@@ -20,7 +20,7 @@
     <ClCompile Include="src\logger\logger.cpp" />
     <ClCompile Include="src\memory\memory.cpp" />
     <ClCompile Include="src\memory\pointers\pointers.cpp" />
-    <ClCompile Include="src\memory\scanner.cpp" />
+    <ClCompile Include="src\memory\util.cpp" />
     <ClCompile Include="src\pch\pch.cpp" />
     <ClCompile Include="src\prx\prx.cpp" />
     <ClCompile Include="src\rage\natives\invoker\invoker.cpp" />
@@ -60,8 +60,8 @@
     <ClInclude Include="src\common\enums.h" />
     <ClInclude Include="src\common\map.h" />
     <ClInclude Include="src\common\math.h" />
-    <ClInclude Include="src\common\memory\addresses.h" />
     <ClInclude Include="src\common\opcodes.h" />
+    <ClInclude Include="src\common\optional.h" />
     <ClInclude Include="src\common\stack.h" />
     <ClInclude Include="src\common\string.h" />
     <ClInclude Include="src\common\templates.h" />
@@ -75,8 +75,10 @@
     <ClInclude Include="src\include.h" />
     <ClInclude Include="src\logger\logger.h" />
     <ClInclude Include="src\memory\memory.h" />
+    <ClInclude Include="src\memory\module.h" />
     <ClInclude Include="src\memory\pointers\pointers.h" />
     <ClInclude Include="src\memory\scanner.h" />
+    <ClInclude Include="src\memory\util.h" />
     <ClInclude Include="src\rage\natives\caller.h" />
     <ClInclude Include="src\rage\natives\natives.h" />
     <ClInclude Include="src\pch\pch.h" />
@@ -130,6 +132,7 @@
     <ClInclude Include="src\ui\types\option.h" />
     <ClInclude Include="src\ui\types\submenu.h" />
     <ClInclude Include="src\ui\types\submenu_option.h" />
+    <ClInclude Include="src\ui\types\vector_option.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCTargetsPath Condition="'$(VCTargetsPath12)' != '' and '$(VSVersion)' == '' and '$(VisualStudioVersion)' == ''">$(VCTargetsPath12)</VCTargetsPath>

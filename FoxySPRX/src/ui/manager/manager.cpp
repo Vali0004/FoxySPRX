@@ -27,6 +27,8 @@ namespace gui {
 		);
 	}
 	void header::draw() {
+		if (!m_enabled)
+			return;
 		drawing::rectangle({ g_pos.x, g_base + (m_size / 2.f) }, { g_width, m_size }, m_color);
 		if (m_txtEnabled) {
 			drawing::text(
@@ -42,6 +44,8 @@ namespace gui {
 		g_base += m_size;
 	}
 	void subtitle::draw() {
+		if (!m_enabled)
+			return;
 		if (m_text != CURRENT_MENU.m_name)
 			m_text = CURRENT_MENU.m_name;
 		drawing::rectangle({ g_pos.x, g_base + (m_size / 2.f) }, { g_width, m_size }, m_color);
@@ -77,6 +81,8 @@ namespace gui {
 		});
 	}
 	void footer::draw() {
+		if (!m_enabled)
+			return;
 		drawing::rectangle({ g_pos.x, g_base + (m_size / 2.f) }, { g_width, m_size }, m_color);
 		if (m_spriteEnabled) {
 			fp size{ m_spriteSize };
@@ -102,6 +108,8 @@ namespace gui {
 		g_base += m_size;
 	}
 	void description::draw() {
+		if (!m_enabled)
+			return;
 		if (VALID_OPTION)
 			m_text = CURRENT_OPTION.m_description;
 		if (!m_text || m_text == "")

@@ -1,10 +1,9 @@
 #include "invoker.h"
-#include "common/memory/addresses.h"
 
 invoker g_invoker{};
 
 rage::scrCmd get_handler(rage::scrNativeHash hash) {
-	for (rage::scrNativeRegistration* entry = g_registrationTable[hash & 0xFF]; entry; entry = entry->get_next_registration()) {
+	for (rage::scrNativeRegistration* entry = pointers::g_registrationTable[hash & 0xFF]; entry; entry = entry->get_next_registration()) {
 		for (uint32_t i{}, end{ entry->get_num_entries() }; i < end; ++i) {
 			uint32_t entry_hash = entry->get_hash(i);
 			if (entry_hash == hash) {

@@ -2,9 +2,10 @@
 #include "submenu_option.h"
 #include "ui/submenus/players/selected_player/selected_player.h"
 
-struct playerOption : public baseOption {
+class playerOption : public baseOption {
+public:
 	playerOption(Player p) : baseOption(PLAYER::GET_PLAYER_NAME(p), {}, {}), m_submenu(selectedPlayer()), m_player(p) {}
-
+public:
 	void draw(bool selected) override {
 		GRAPHICS::SET_SCRIPT_GFX_DRAW_ORDER(8);
 		gui::drawing::image(
@@ -27,6 +28,7 @@ struct playerOption : public baseOption {
 		}
 		baseOption::action(type);
 	}
+private:
 	submenu m_submenu{};
 	Player m_player{};
 };

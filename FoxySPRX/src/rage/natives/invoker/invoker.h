@@ -2,8 +2,7 @@
 #include "rage/scr_native_registration.h"
 #include "rage/natives/call_context.h"
 #include "rage/natives/types.h"
-
-extern rage::scrNativeRegistration** g_registrationTable;
+#include "memory/pointers/pointers.h"
 
 extern rage::scrCmd get_handler(rage::scrNativeHash hash);
 
