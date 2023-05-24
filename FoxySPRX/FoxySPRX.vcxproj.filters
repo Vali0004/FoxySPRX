@@ -4,8 +4,8 @@
     <ClInclude Include="src\hooking\method\detour\detour.h">
       <Filter>src\hooking\method\detour</Filter>
     </ClInclude>
-    <ClInclude Include="src\filesystem\filesystem.h">
-      <Filter>src\filesystem</Filter>
+    <ClInclude Include="src\util\filesystem\filesystem.h">
+      <Filter>src\util\filesystem</Filter>
     </ClInclude>
     <ClInclude Include="src\hooking\hooking.h">
       <Filter>src\hooking</Filter>
@@ -29,9 +29,6 @@
       <Filter>src\common</Filter>
     </ClInclude>
     <ClInclude Include="src\common\templates.h">
-      <Filter>src\common</Filter>
-    </ClInclude>
-    <ClInclude Include="src\common\version.h">
       <Filter>src\common</Filter>
     </ClInclude>
     <ClInclude Include="src\memory\memory.h">
@@ -229,7 +226,12 @@
     <ClInclude Include="src\memory\module.h">
       <Filter>src\memory</Filter>
     </ClInclude>
-    <ClInclude Include="src\memory\scanner.h" />
+    <ClInclude Include="src\memory\scanner.h">
+      <Filter>src\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="src\util\global.h">
+      <Filter>src\util</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -237,9 +239,6 @@
     </Filter>
     <Filter Include="src\common">
       <UniqueIdentifier>{a70b27ac-4183-41a2-b9ae-133eb79aecc4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\filesystem">
-      <UniqueIdentifier>{c22273de-73ec-41cf-9c1f-7013725a6b9f}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\hooking">
       <UniqueIdentifier>{1fa9ccb9-9e6f-49c3-b8c0-cc3bc901d7df}</UniqueIdentifier>
@@ -382,13 +381,19 @@
     <Filter Include="src\memory\pointers">
       <UniqueIdentifier>{26696662-9c84-402a-8360-ffa83b29cfd3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\util">
+      <UniqueIdentifier>{47bf903a-5fb3-495a-add7-c3371962ca7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\util\filesystem">
+      <UniqueIdentifier>{c22273de-73ec-41cf-9c1f-7013725a6b9f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\hooking\method\detour\detour.cpp">
       <Filter>src\hooking\method\detour</Filter>
     </ClCompile>
-    <ClCompile Include="src\filesystem\filesystem.cpp">
-      <Filter>src\filesystem</Filter>
+    <ClCompile Include="src\util\filesystem\filesystem.cpp">
+      <Filter>src\util\filesystem</Filter>
     </ClCompile>
     <ClCompile Include="src\hooking\hooking.cpp">
       <Filter>src\hooking</Filter>

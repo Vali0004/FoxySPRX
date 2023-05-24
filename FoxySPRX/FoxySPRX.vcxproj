@@ -13,7 +13,7 @@
   <ItemGroup>
     <ClCompile Include="src\core\core.cpp" />
     <ClCompile Include="src\features\features.cpp" />
-    <ClCompile Include="src\filesystem\filesystem.cpp" />
+    <ClCompile Include="src\util\filesystem\filesystem.cpp" />
     <ClCompile Include="src\hooking\hooking.cpp" />
     <ClCompile Include="src\hooking\hooks\network_is_signed_online.cpp" />
     <ClCompile Include="src\hooking\method\detour\detour.cpp" />
@@ -69,7 +69,7 @@
     <ClInclude Include="src\common\vector.h" />
     <ClInclude Include="src\core\core.h" />
     <ClInclude Include="src\features\features.h" />
-    <ClInclude Include="src\filesystem\filesystem.h" />
+    <ClInclude Include="src\util\filesystem\filesystem.h" />
     <ClInclude Include="src\hooking\hooking.h" />
     <ClInclude Include="src\hooking\method\detour\detour.h" />
     <ClInclude Include="src\include.h" />
@@ -92,7 +92,6 @@
     <ClInclude Include="src\rage\vectors.h" />
     <ClInclude Include="src\script\script.h" />
     <ClInclude Include="src\syscalls\syscalls.h" />
-    <ClInclude Include="src\common\version.h" />
     <ClInclude Include="src\hooking\method\native\native.h" />
     <ClInclude Include="src\rage\natives\types.h" />
     <ClInclude Include="src\ui\classes.h" />
@@ -133,6 +132,7 @@
     <ClInclude Include="src\ui\types\submenu.h" />
     <ClInclude Include="src\ui\types\submenu_option.h" />
     <ClInclude Include="src\ui\types\vector_option.h" />
+    <ClInclude Include="src\util\global.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCTargetsPath Condition="'$(VCTargetsPath12)' != '' and '$(VSVersion)' == '' and '$(VisualStudioVersion)' == ''">$(VCTargetsPath12)</VCTargetsPath>

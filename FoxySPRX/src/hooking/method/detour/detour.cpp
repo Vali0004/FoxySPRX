@@ -1,6 +1,6 @@
 #include "detour.h"
 #include "memory/memory.h"
-#include "filesystem/filesystem.h"
+#include "util/filesystem/filesystem.h"
 
 uint8_t detour::m_trampoline[TRAMPOLINE_PAGE_SIZE]{};
 size_t detour::m_trampolineSize{};
