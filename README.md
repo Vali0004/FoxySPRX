@@ -16,4 +16,3 @@
 # Some extra notes for those wondering
  * I know some of you are confused where my DS4 support sprx is, and, I lost it. My third drive kinda died. I'm working on rewriting it for this base as I a writing this readme. I will update this when I have added it.
 * There may still be bugs, as it's not 100%. I will try my best to ensure there isn't any, but I cannot make any promises. Please, feel free to make a issue for any bug. If you fix it, make a pull request if you can.
-* This is only for BLUS V1.12, I will work on adding a improved pattern scanner. I added support for BLES, but the flag must be changed in src/common/version.h
