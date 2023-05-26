@@ -43,7 +43,8 @@ public:
 			m_options[m_current]->action(type);
 	}
 	void once() {
-		m_action(*this);
+		if (m_action)
+			m_action(*this);
 	}
 	void handle(fnptr<void()> onNoOptions) {
 		if (m_options.empty())
