@@ -118,8 +118,8 @@
     <ClInclude Include="src\ui\types\number_option.h">
       <Filter>src\ui\types</Filter>
     </ClInclude>
-    <ClInclude Include="src\script\script.h">
-      <Filter>src\script</Filter>
+    <ClInclude Include="src\ui\script\script.h">
+      <Filter>src\ui\script</Filter>
     </ClInclude>
     <ClInclude Include="src\ui\submenus\players\selected_player\selected_player.h">
       <Filter>src\ui\submenus\players\selected_player</Filter>
@@ -300,9 +300,6 @@
     <Filter Include="src\ui\submenus\settings">
       <UniqueIdentifier>{404a1db2-4a5f-4ee0-9158-30aa673c6a72}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\script">
-      <UniqueIdentifier>{8135fceb-4ab1-4d58-b600-a68f7f56a6f9}</UniqueIdentifier>
-    </Filter>
     <Filter Include="src\ui\submenus\players">
       <UniqueIdentifier>{fc5cc0dc-e1dd-4680-b1c9-cf906cb9a91a}</UniqueIdentifier>
     </Filter>
@@ -387,6 +384,9 @@
     <Filter Include="src\util\filesystem">
       <UniqueIdentifier>{c22273de-73ec-41cf-9c1f-7013725a6b9f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\ui\script">
+      <UniqueIdentifier>{8135fceb-4ab1-4d58-b600-a68f7f56a6f9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\hooking\method\detour\detour.cpp">
@@ -431,8 +431,8 @@
     <ClCompile Include="src\ui\submenus\demo\demo.cpp">
       <Filter>src\ui\submenus\demo</Filter>
     </ClCompile>
-    <ClCompile Include="src\script\script.cpp">
-      <Filter>src\script</Filter>
+    <ClCompile Include="src\ui\script\script.cpp">
+      <Filter>src\ui\script</Filter>
     </ClCompile>
     <ClCompile Include="src\ui\submenus\players\selected_player\selected_player.cpp">
       <Filter>src\ui\submenus\players\selected_player</Filter>

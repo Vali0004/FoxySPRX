@@ -4,7 +4,7 @@
 
 class playerOption : public baseOption {
 public:
-	playerOption(Player p) : baseOption(PLAYER::GET_PLAYER_NAME(p), {}, {}), m_submenu(selectedPlayer()), m_player(p) {}
+	playerOption(Player p) : baseOption(PLAYER::GET_PLAYER_NAME(p), {}, {}), m_submenu(selectedPlayer::getInstance()), m_player(p) {}
 public:
 	void draw(bool selected) override {
 		GRAPHICS::SET_SCRIPT_GFX_DRAW_ORDER(8);
@@ -22,13 +22,13 @@ public:
 	void action(eActionType type) override {
 		switch (type) {
 		case at_Enter: {
-			m_submenu.m_name = PLAYER::GET_PLAYER_NAME(m_player);
-			gui::menu::push(m_submenu);
+			m_submenu->m_name = PLAYER::GET_PLAYER_NAME(m_player);
+			gui::menu::push(*m_submenu);
 		} break;
 		}
 		baseOption::action(type);
 	}
 private:
-	submenu m_submenu{};
+	submenu* m_submenu{};
 	Player m_player{};
 };

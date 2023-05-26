@@ -1,5 +1,5 @@
 #include "hooking/hooking.h"
-#include "script/script.h"
+#include "ui/script/script.h"
 #include "logger/logger.h"
 #include "rage/natives/natives.h"
 #include <ui/manager/manager.h>

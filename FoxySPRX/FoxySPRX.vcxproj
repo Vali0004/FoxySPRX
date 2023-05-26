@@ -24,7 +24,7 @@
     <ClCompile Include="src\pch\pch.cpp" />
     <ClCompile Include="src\prx\prx.cpp" />
     <ClCompile Include="src\rage\natives\invoker\invoker.cpp" />
-    <ClCompile Include="src\script\script.cpp" />
+    <ClCompile Include="src\ui\script\script.cpp" />
     <ClCompile Include="src\syscalls\syscalls.cpp" />
     <ClCompile Include="src\hooking\method\native\native.cpp" />
     <ClCompile Include="src\ui\manager\manager.cpp" />
@@ -90,7 +90,7 @@
     <ClInclude Include="src\rage\scr_value.h" />
     <ClInclude Include="src\rage\scr_vector.h" />
     <ClInclude Include="src\rage\vectors.h" />
-    <ClInclude Include="src\script\script.h" />
+    <ClInclude Include="src\ui\script\script.h" />
     <ClInclude Include="src\syscalls\syscalls.h" />
     <ClInclude Include="src\hooking\method\native\native.h" />
     <ClInclude Include="src\rage\natives\types.h" />

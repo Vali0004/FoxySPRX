@@ -2,7 +2,7 @@
 #include "selected/toggle_selected.h"
 
 toggle::toggle() : submenu("Toggle", [](submenu& submenu) {
-	submenu.add(submenuOption("Selected", opt::tog::selected()));
+	submenu.add(submenuOption("Selected", opt::tog::selected::getInstance()));
 	submenu.add(numberOption<fp>("Width", g_options.m_toggleSize.x, 0.f, 1.f, 0.01f));
 	submenu.add(numberOption<fp>("Height", g_options.m_toggleSize.y, 0.f, 1.f, 0.01f));
 	submenu.add(numberOption<fp>("Rotation", g_options.m_toggle.m_rotation, 0.f, 360.f, 1.f));

@@ -4,8 +4,8 @@
 
 class submenuOption : public baseOption {
 public:
-	submenuOption(ccp name, ccp description, submenu sub, fnptr<void()> action = nullptr) : baseOption(name, description, action), m_submenu(sub) {}
-	submenuOption(ccp name, submenu sub, fnptr<void()> action = nullptr) : submenuOption(name, ccp(), sub, action) {}
+	submenuOption(ccp name, ccp description, submenu* sub, fnptr<void()> action = nullptr) : baseOption(name, description, action), m_submenu(sub) {}
+	submenuOption(ccp name, submenu* sub, fnptr<void()> action = nullptr) : submenuOption(name, ccp(), sub, action) {}
 public:
 	void draw(bool selected) override {
 		GRAPHICS::SET_SCRIPT_GFX_DRAW_ORDER(8);
@@ -23,11 +23,11 @@ public:
 	void action(eActionType type) override {
 		switch (type) {
 		case at_Enter: {
-			gui::menu::push(m_submenu);
+			gui::menu::push(*m_submenu);
 		} break;
 		}
 		baseOption::action(type);
 	}
 private:
-	submenu m_submenu;
+	submenu* m_submenu;
 };

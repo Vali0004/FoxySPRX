@@ -5,6 +5,15 @@
 	class n : public submenu { \
 	public: \
 		n(); \
+	public: \
+		static n* getInstance() { \
+			static n* instance{}; \
+			if (!instance) { \
+				instance = new n(); \
+				instance->once(); \
+			} \
+			return instance; \
+		} \
 	};
 
 class submenu {
@@ -33,11 +42,10 @@ public:
 		if (!m_options.empty())
 			m_options[m_current]->action(type);
 	}
-	void reset() {
-		m_options.clear();
+	void once() {
+		m_action(*this);
 	}
 	void handle(fnptr<void()> onNoOptions) {
-		m_action(*this);
 		if (m_options.empty())
 			onNoOptions();
 		for (size_t i{}; i != m_options.size(); ++i) {

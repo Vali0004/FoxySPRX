@@ -2,7 +2,7 @@
 #include "selected/arrow_selected.h"
 
 arrow::arrow() : submenu("Arrow", [](submenu& submenu) {
-	submenu.add(submenuOption("Selected", opt::arrw::selected()));
+	submenu.add(submenuOption("Selected", opt::arrw::selected::getInstance()));
 	submenu.add(numberOption<fp>("Width", g_options.m_arrowSize.x, 0.f, 1.f, 0.01f));
 	submenu.add(numberOption<fp>("Height", g_options.m_arrowSize.y, 0.f, 1.f, 0.01f));
 	submenu.add(numberOption<fp>("Rotation", g_options.m_arrow.m_rotation, 0.f, 360.f, 1.f));

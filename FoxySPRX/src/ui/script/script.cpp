@@ -1,6 +1,7 @@
-#include "script/script.h"
+#include "ui/script/script.h"
 #include "logger/logger.h"
 #include "ui/manager/manager.h"
+#include "rage/natives/natives.h"
 #include "ui/submenus/demo/demo.h"
 #include "ui/submenus/players/players.h"
 #include "ui/submenus/settings/settings.h"
@@ -12,10 +13,11 @@ namespace script {
 		gui::handlers::sounds::set();
 		gui::keys::set();
 		gui::g_menu = submenu("Home", [](submenu& submenu) {
-			submenu.add(submenuOption("Demo", demo()));
-			submenu.add(submenuOption("Players", players()));
-			submenu.add(submenuOption("Settings", settings()));
+			submenu.add(submenuOption("Demo", demo::getInstance()));
+			submenu.add(submenuOption("Players", players::getInstance()));
+			submenu.add(submenuOption("Settings", settings::getInstance()));
 		});
+		gui::g_menu.once();
 	}
 	void tick() {
 		//Disable/enable phone

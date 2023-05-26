@@ -75,7 +75,6 @@ namespace gui {
 		g_base += m_size;
 	}
 	void options::draw() {
-		CURRENT_MENU.reset();
 		CURRENT_MENU.handle([] {
 			CURRENT_MENU.add(option("~c~~italic~No options."));
 		});

@@ -4,7 +4,7 @@
 
 namespace opt {
 	sprite::sprite() : submenu("Sprite", [](submenu& submenu) {
-		submenu.add(submenuOption("Arrow", arrow()));
-		submenu.add(submenuOption("Toggle", toggle()));
+		submenu.add(submenuOption("Arrow", arrow::getInstance()));
+		submenu.add(submenuOption("Toggle", toggle::getInstance()));
 	}) {}
 }
