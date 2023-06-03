@@ -2742,32 +2742,31 @@ namespace STREAMING
 
 namespace SCRIPT
 {
-	nativeDecl void REQUEST_SCRIPT(const char* ScriptName) { invoke<Void>(0xE26B2666, ScriptName); } // 0xE26B2666
-	nativeDecl void SET_SCRIPT_AS_NO_LONGER_NEEDED(const char* ScriptName) { invoke<Void>(0x6FCB7795, ScriptName); } // 0x6FCB7795
-	nativeDecl BOOL HAS_SCRIPT_LOADED(const char* ScriptName) { return invoke<BOOL>(0x5D67F751, ScriptName); } // 0x5D67F751
-	nativeDecl BOOL DOES_SCRIPT_EXIST(const char* ScriptName) { return invoke<BOOL>(0xDEAB87AB, ScriptName); } // 0xDEAB87AB
-	nativeDecl void _0x1C68D9DC(Any p0) { invoke<Void>(0x1C68D9DC, p0); } // 0x1C68D9DC
-	nativeDecl void _0x96C26F66(Any p0) { invoke<Void>(0x96C26F66, p0); } // 0x96C26F66
-	nativeDecl Any _0x06674818(Any p0) { return invoke<Any>(0x06674818, p0); } // 0x06674818
-	nativeDecl void TERMINATE_THREAD(int ThreadID) { invoke<Void>(0x253FD520, ThreadID); } // 0x253FD520
-	nativeDecl BOOL IS_THREAD_ACTIVE(int ThreadID) { return invoke<BOOL>(0x78D7A5A0, ThreadID); } // 0x78D7A5A0
-	nativeDecl const char* _GET_THREAD_NAME(int ThreadID) { return invoke<const char*>(0xBE7ACD89, ThreadID); } // 0xBE7ACD89
-	nativeDecl void _0xBB4E2F66() { invoke<Void>(0xBB4E2F66); } // 0xBB4E2F66
-	nativeDecl Any _0x1E28B28F() { return invoke<Any>(0x1E28B28F); } // 0x1E28B28F
+	nativeDecl void REQUEST_SCRIPT(const char* scriptName) { invoke<Void>(0xE26B2666, scriptName); } // 0xE26B2666
+	nativeDecl void SET_SCRIPT_AS_NO_LONGER_NEEDED(const char* scriptName) { invoke<Void>(0x6FCB7795, scriptName); } // 0x6FCB7795
+	nativeDecl BOOL HAS_SCRIPT_LOADED(const char* scriptName) { return invoke<BOOL>(0x5D67F751, scriptName); } // 0x5D67F751
+	nativeDecl BOOL DOES_SCRIPT_EXIST(const char* scriptName) { return invoke<BOOL>(0xDEAB87AB, scriptName); } // 0xDEAB87AB
+	nativeDecl void REQUEST_SCRIPT_WITH_NAME_HASH(Hash scriptHash) { invoke<Void>(0x1C68D9DC, scriptHash); } // 0x1C68D9DC
+	nativeDecl void SET_SCRIPT_WITH_NAME_HASH_AS_NO_LONGER_NEEDED(Hash scriptHash) { invoke<Void>(0x96C26F66, scriptHash); } // 0x96C26F66
+	nativeDecl BOOL HAS_SCRIPT_WITH_NAME_HASH_LOADED(Any scriptHash) { return invoke<BOOL>(0x06674818, scriptHash); } // 0x06674818
+	nativeDecl void TERMINATE_THREAD(int threadId) { invoke<Void>(0x253FD520, threadId); } // 0x253FD520
+	nativeDecl BOOL IS_THREAD_ACTIVE(int threadId) { return invoke<BOOL>(0x78D7A5A0, threadId); } // 0x78D7A5A0
+	nativeDecl const char* _GET_THREAD_NAME(int threadId) { return invoke<const char*>(0xBE7ACD89, threadId); } // 0xBE7ACD89
+	nativeDecl void SCRIPT_THREAD_ITERATOR_RESET() { invoke<Void>(0xBB4E2F66); } // 0xBB4E2F66
+	nativeDecl Any SCRIPT_THREAD_ITERATOR_GET_NEXT_THREAD_ID() { return invoke<Any>(0x1E28B28F); } // 0x1E28B28F
 	nativeDecl int GET_ID_OF_THIS_THREAD() { return invoke<int>(0xDE524830); } // 0xDE524830
 	nativeDecl void TERMINATE_THIS_THREAD() { invoke<Void>(0x3CD9CBB7); } // 0x3CD9CBB7
-	nativeDecl int _0x029D3841(Hash ScriptHash) { return invoke<int>(0x029D3841, ScriptHash); } // 0x029D3841
+	nativeDecl int GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(Hash ScriptHash) { return invoke<int>(0x029D3841, ScriptHash); } // 0x029D3841
 	nativeDecl const char* GET_THIS_SCRIPT_NAME() { return invoke<const char*>(0xA40FD5D9); } // 0xA40FD5D9
-	nativeDecl Any _0x2BEE1F45() { return invoke<Any>(0x2BEE1F45); } // 0x2BEE1F45
-	nativeDecl Any GET_NUMBER_OF_EVENTS(Any p0) { return invoke<Any>(0xA3525D60, p0); } // 0xA3525D60
-	nativeDecl Any GET_EVENT_EXISTS(Any p0, Any p1) { return invoke<Any>(0xA1B447B5, p0, p1); } // 0xA1B447B5
-	nativeDecl Any GET_EVENT_AT_INDEX(Any p0, Any p1) { return invoke<Any>(0xB49C1442, p0, p1); } // 0xB49C1442
-	nativeDecl Any GET_EVENT_DATA(Any p0, Any p1, int* p2, Any p3) { return invoke<Any>(0x4280F92F, p0, p1, p2, p3); } // 0x4280F92F
-
+	nativeDecl Hash GET_HASH_OF_THIS_SCRIPT_NAME() { return invoke<Hash>(0x2BEE1F45); } // 0x2BEE1F45
+	nativeDecl int GET_NUMBER_OF_EVENTS(int eventGroup) { return invoke<Any>(0xA3525D60, eventGroup); } // 0xA3525D60
+	nativeDecl BOOL GET_EVENT_EXISTS(int eventGroup, int eventIndex) { return invoke<BOOL>(0xA1B447B5, eventGroup, eventIndex); } // 0xA1B447B5
+	nativeDecl int GET_EVENT_AT_INDEX(int eventGroup, int eventIndex) { return invoke<int>(0xB49C1442, eventGroupint, eventIndex); } // 0xB49C1442
+	nativeDecl BOOL GET_EVENT_DATA(int eventGroup, int eventIndex, Any* eventData, int eventDataSize) { return invoke<BOOL>(0x4280F92F, eventGroup, eventIndex, eventData, eventDataSize); } // 0x4280F92F
 	nativeDecl void TRIGGER_SCRIPT_EVENT(int always1, Any* argsStruct, int argsStructCount, int playerbitset) { invoke<Void>(0x54763B35, always1, argsStruct, argsStructCount, playerbitset); } // 0x54763B35
 	nativeDecl void SHUTDOWN_LOADING_SCREEN() { invoke<Void>(0xA2826D17); } // 0xA2826D17
-	nativeDecl void SET_NO_LOADING_SCREEN(BOOL p0) { invoke<Void>(0xC8055034, p0); } // 0xC8055034
-	nativeDecl void _0xB03BCCDF() { invoke<Void>(0xB03BCCDF); } // 0xB03BCCDF
+	nativeDecl void SET_NO_LOADING_SCREEN(BOOL toggle) { invoke<Void>(0xC8055034, toggle); } // 0xC8055034
+	nativeDecl void COMMIT_TO_LOADINGSCREEN_SELCTION() { invoke<Void>(0xB03BCCDF); } // 0xB03BCCDF
 }
 
 namespace UI
