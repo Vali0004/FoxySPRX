@@ -3,6 +3,24 @@
 #include "common/string.h"
 #include "common/math.h"
 
+namespace rage {
+	char toLower(const char c) {
+		return (c >= 'A' && c <= 'Z') ? c + ('a' - 'A') : c;
+	}
+  	unsigned int joaat(const char* str) {
+		unsigned int hash{};
+		while (*str) {
+			hash += toLower(*str++);
+			hash += (hash << 10);
+			hash ^= (hash >> 6);
+		}
+		hash += (hash << 3);
+		hash ^= (hash >> 11);
+		hash += (hash << 15);
+		return hash;
+	}
+}
+
 void reverse(buf_t str, s32 length) {
 	s32 start = 0;
 	s32 end = length - 1;
