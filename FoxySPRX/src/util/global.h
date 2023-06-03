@@ -11,7 +11,10 @@ public:
 		return { Index + Array * Size };
 	}
 	rage::scrValue* Value() {
-		return pointers::g_globals[Index >> 18 & 0x3F] + (Index & 0x3FFFF);
+		rage::scrValue* Pointer{ *(volatile int*)((pointers::g_globals) + (((Index / 0x40000) & 0x3F) * 4)) };
+		if (Pointer)
+			return (rage::scrValue*)(Pointer + ((Index % 0x40000) * 4));
+		return nullptr
 	}
 public:
 	u64 Index;
