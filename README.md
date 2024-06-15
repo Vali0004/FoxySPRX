@@ -1,7 +1,7 @@
 # FoxySPRX
  A base written from scratch inspired by modern bases.
 # What's different? Why FoxySPRX?
- * To start off, I implemented lots of ease-of-life defines. I wrote STD-like impmeplentations of the most commonly used stdlib things. I added lots of other very useful things such as math implementations (stuff like sin, cos, tan and others)
+ * To start off, I implemented lots of ease-of-life defines. I wrote STD-like implementations of the most commonly used stdlib things. I added lots of other very useful things such as math implementations (stuff like sin, cos, tan and others)
  * The whole menu has a everloving shitload of customisation. I'm not sure, but it might be the most amount of customisation in a PS3 menu base. You can literally edit the whole menu without ever touching the source, as the ability to remove elements was added. I made sure all the math was dynamic, and easy to understand.
  * It uses lots of modern C++ standard things.
  * The code is extremely easy to understand.
