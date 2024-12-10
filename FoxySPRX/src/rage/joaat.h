@@ -1,5 +1,6 @@
 #pragma once
 #include "include.h"
+#include <cstddef>
 
 namespace rage {
 	extern char toLower(cc c);

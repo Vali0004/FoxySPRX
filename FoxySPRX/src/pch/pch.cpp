@@ -20,6 +20,7 @@ namespace rage {
 		return hash;
 	}
 }
+
 void reverse(buf_t str, s32 length) {
 	s32 start = 0;
 	s32 end = length - 1;
