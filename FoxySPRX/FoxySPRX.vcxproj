@@ -11,8 +11,20 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\hooking\hooks\handle_clone_sync.cpp" />
     <ClCompile Include="src\core\core.cpp" />
     <ClCompile Include="src\features\features.cpp" />
+    <ClCompile Include="src\features\script_injector.cpp" />
+    <ClCompile Include="src\hooking\hooks\are_online_policies_up_to_date.cpp" />
+    <ClCompile Include="src\hooking\hooks\dlc_check_cloud_data_correct.cpp" />
+    <ClCompile Include="src\hooking\hooks\input.cpp" />
+    <ClCompile Include="src\hooking\hooks\network_are_social_club_policies_current.cpp" />
+    <ClCompile Include="src\hooking\hooks\network_have_communication_privileges.cpp" />
+    <ClCompile Include="src\hooking\hooks\network_is_signed_in.cpp" />
+    <ClCompile Include="src\hooking\hooks\sc_profanity_get_check_is_pending.cpp" />
+    <ClCompile Include="src\hooking\hooks\sc_profanity_get_check_is_valid.cpp" />
+    <ClCompile Include="src\hooking\hooks\sc_profanity_get_string_status.cpp" />
+    <ClCompile Include="src\hooking\hooks\force_cloud_mp_stats_download_and_overwrite_local_save.cpp" />
     <ClCompile Include="src\util\filesystem\filesystem.cpp" />
     <ClCompile Include="src\hooking\hooking.cpp" />
     <ClCompile Include="src\hooking\hooks\network_is_signed_online.cpp" />
@@ -54,6 +66,7 @@
     <ClCompile Include="src\ui\submenus\settings\subtitle\background\subtitle_background.cpp" />
     <ClCompile Include="src\ui\submenus\settings\subtitle\subtitle.cpp" />
     <ClCompile Include="src\ui\submenus\settings\subtitle\text\subtitle_text.cpp" />
+    <ClCompile Include="src\util\pad.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\common\defines.h" />
@@ -62,6 +75,7 @@
     <ClInclude Include="src\common\math.h" />
     <ClInclude Include="src\common\opcodes.h" />
     <ClInclude Include="src\common\optional.h" />
+    <ClInclude Include="src\common\pair.h" />
     <ClInclude Include="src\common\stack.h" />
     <ClInclude Include="src\common\string.h" />
     <ClInclude Include="src\common\templates.h" />
@@ -69,6 +83,11 @@
     <ClInclude Include="src\common\vector.h" />
     <ClInclude Include="src\core\core.h" />
     <ClInclude Include="src\features\features.h" />
+    <ClInclude Include="src\features\script_injector.h" />
+    <ClInclude Include="src\rage\joaat.h" />
+    <ClInclude Include="src\rage\page.h" />
+    <ClInclude Include="src\rage\ped_factory.h" />
+    <ClInclude Include="src\rage\scr_program.h" />
     <ClInclude Include="src\util\filesystem\filesystem.h" />
     <ClInclude Include="src\hooking\hooking.h" />
     <ClInclude Include="src\hooking\method\detour\detour.h" />
@@ -133,6 +152,7 @@
     <ClInclude Include="src\ui\types\submenu_option.h" />
     <ClInclude Include="src\ui\types\vector_option.h" />
     <ClInclude Include="src\util\global.h" />
+    <ClInclude Include="src\util\pad.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCTargetsPath Condition="'$(VCTargetsPath12)' != '' and '$(VSVersion)' == '' and '$(VisualStudioVersion)' == ''">$(VCTargetsPath12)</VCTargetsPath>
@@ -197,9 +217,14 @@
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <CppLanguageStd>Cpp11</CppLanguageStd>
       <CompileAs>CompileAsCpp</CompileAs>
+      <AdditionalIncludeDirectories>$(SN_PS3_PATH)\ppu\include\sn;$(SCE_PS3_ROOT)\target\ppu\include;$(SCE_PS3_ROOT)\target\common\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link />
     <Link />
+    <Link>
+      <AdditionalLibraryDirectories>$$(SN_PS3_PATH)\ppu\lib\sn\libsn.a;(SCE_PS3_ROOT)\host-win32\lib\prx\ldscripts</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SCE_PS3_ROOT)\target\ppu\lib\libstdc++.a;$(SCE_PS3_ROOT)\target\ppu\lib\libstdc++_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\libc.a;$(SCE_PS3_ROOT)\target\ppu\lib\libc_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\libhttp_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\libnet_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\libsysutil_stub.a;$(SN_PS3_PATH)\ppu\lib\sn\libsn.a;$(SCE_PS3_ROOT)\target\ppu\lib\libm.a;$(SCE_PS3_ROOT)\target\ppu\lib\libio_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\libsysmodule_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\libsyscall.a;$(SCE_PS3_ROOT)\target\ppu\lib\fno-exceptions\libstdc++_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\fno-exceptions\fno-rtti\libstdc++_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\libsysutil_np_stub.a;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <Import Condition="'$(ConfigurationType)' == 'Makefile' and Exists('$(VCTargetsPath)\Platforms\$(Platform)\SCE.Makefile.$(Platform).targets')" Project="$(VCTargetsPath)\Platforms\$(Platform)\SCE.Makefile.$(Platform).targets" />
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

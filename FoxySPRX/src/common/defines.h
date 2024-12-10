@@ -22,7 +22,6 @@
 #define memcmp _sys_memcmp
 #define memcpy _sys_memcpy
 #define memmove _sys_memmove
-#define memset _sys_memset
 #define strrchr _sys_strrchr
 #define strcat _sys_strcat
 #define strchr _sys_strchr
@@ -31,3 +30,5 @@
 #define strlen _sys_strlen
 #define tolower _sys_tolower
 #define toupper _sys_toupper
+#define global static inline __attribute__( (awlays_inline) )
+//Why can't inline just fucking work?

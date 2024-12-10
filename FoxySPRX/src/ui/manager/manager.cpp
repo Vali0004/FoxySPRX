@@ -114,14 +114,15 @@ namespace gui {
 		if (!m_text || m_text == "")
 			return;
 		g_base += m_height;
+		UI::SET_TEXT_WRAP(g_pos.x - (g_width / m_padding), g_pos.x + (g_width / m_padding));
 		s32 lines{ drawing::math::lineCount(m_text, { g_pos.x, g_base + (m_size / 2.f) }, m_font, m_txtSize) };
-		fp size{ (lines * drawing::math::textHeight(m_font, m_txtSize)) + (0.005f * lines) + 0.005f };
+		fp size{ (lines * drawing::math::textHeight(m_font, m_txtSize)) + m_size };
 		drawing::rectangle({ g_pos.x, g_base + (size / 2.f) }, { g_width, size }, m_color);
 		if (m_txtEnabled) {
 			UI::SET_TEXT_WRAP(g_pos.x - (g_width / m_padding), g_pos.x + (g_width / m_padding));
 			drawing::text(
 				m_text,
-				{ g_pos.x - (g_width / m_padding), g_base + (m_size / 2.f) - (drawing::math::textHeight(m_font, m_txtSize) / 1.5f) },
+				{ g_pos.x - (g_width / m_padding), g_base + (m_size / 2.f) - (drawing::math::textHeight(m_font, m_txtSize) / 2.5555556f) },
 				m_txtColor,
 				m_txtSize,
 				m_font,
@@ -141,34 +142,13 @@ namespace gui {
 		input g_left{};
 		input g_right{};
 		void set() {
-			//Why can't default initialization just work?
-			g_open.m_delay = 20;
-			g_open.m_nativeKey = ControlFrontendRright;
-			g_open.m_secondaryNativeKey = ControlFrontendCancel;
-
-			g_enter.m_delay = 20;
-			g_enter.m_nativeKey = ControlFrontendLb;
-			g_enter.m_secondaryNativeKey = ControlInputEmpty;
-
-			g_back.m_delay = 10;
-			g_back.m_nativeKey = ControlFrontendRup;
-			g_back.m_secondaryNativeKey = ControlInputEmpty;
-
-			g_up.m_delay = 10;
-			g_up.m_nativeKey = ControlFrontendPause;
-			g_up.m_secondaryNativeKey = ControlInputEmpty;
-
-			g_down.m_delay = 10;
-			g_down.m_nativeKey = ControlSelectWeaponSmg;
-			g_down.m_secondaryNativeKey = ControlInputEmpty;
-
-			g_left.m_delay = 10;
-			g_left.m_nativeKey = ControlFrontendAccept;
-			g_left.m_secondaryNativeKey = ControlInputEmpty;
-
-			g_right.m_delay = 10;
-			g_right.m_nativeKey = ControlFrontendCancel;
-			g_right.m_secondaryNativeKey = ControlInputEmpty;
+			g_open = { 20, BUTTON_R1, DPAD_RIGHT };
+			g_enter = { 20, BUTTON_X, BUTTON_EMPTY };
+			g_back = { 10, BUTTON_O, BUTTON_EMPTY };
+			g_up = { 10, DPAD_UP, BUTTON_EMPTY };
+			g_down = { 10, DPAD_DOWN, BUTTON_EMPTY };
+			g_left = { 10, DPAD_LEFT, BUTTON_EMPTY };
+			g_right = { 10, DPAD_RIGHT, BUTTON_EMPTY };
 		}
 		void reset() {
 			g_open.m_pressed = false;

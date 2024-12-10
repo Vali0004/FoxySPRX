@@ -53,7 +53,7 @@ namespace memory {
         mem() { set_ptr(nullptr); }
     public:
         template <typename t>
-        t as() { return reinterpret_cast<t>(m_ptr); }
+        t as() { return (t)m_ptr; }
         mem add(u64 offset) { return mem(as<u64>() + offset); }
         mem sub(u64 offset) { return mem(as<u64>() - offset); }
         template <typename t>
@@ -67,7 +67,7 @@ namespace memory {
         u64 m_ptr{};
     };
     template <typename ret, typename ...t>
-    __ALWAYS_INLINE ret call(u32 addr, t... args) {
+    global ret call(u32 addr, t... args) {
         volatile opd_s opd{ addr, GetCurrentToc() };
         ret(*fn)(t...) = (ret(*)(t...)) & opd;
         return fn(args...);

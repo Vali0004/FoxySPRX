@@ -18,4 +18,8 @@ namespace core {
 			extern int stop();
 		}
 	}
+	
+}
+global bool unload() {
+	return !core::sys::prx::stop();
 }

@@ -8,11 +8,11 @@ public:
 	string();
 	string(ccp str);
 	string(const string& other);
-	string(u64 size);
-	string(u64 size, char initValue);
+	string(size_t size);
+	string(size_t size, char initValue);
 	~string();
 
-	u64 size() const {
+	size_t size() const {
 		return size_;
 	}
 	ccp str() const {
@@ -38,24 +38,15 @@ public:
 		if (endIdx == -1) {
 			return &begin()[startIdx];
 		}
-		else {
-			s32 len = endIdx - startIdx;
-			buf_t dest = new char[len]();
-			strncpy(dest, (begin() + startIdx), len);
-			delete dest;
-			return dest;
-		}
-		if (startIdx == 0) {
-			return begin();
-		}
-		else {
-			strncpy(data_, (ccp)(&begin()[startIdx] + (endIdx - 1)), size());
-			return data_;
-		}
+		s32 len = endIdx - startIdx;
+		buf_t dest = new char[len]();
+		strncpy(dest, (begin() + startIdx), len);
+		delete dest;
+		return dest;
 	}
-	void insert(u64 pos, ccp str);
-	void insert(u64 pos, char c);
-	template <u64 s>
+	void insert(size_t pos, ccp str);
+	void insert(size_t pos, char c);
+	template <size_t s>
 	void append(const char(&str)[s]);
 	void append(string str);
 	void append(char c);
@@ -64,10 +55,10 @@ public:
 	string& operator+(fp value);
 	string& operator+(const string& other);
 	string& operator=(const string& other);
-	char operator[](u64 index) {
+	char operator[](size_t index) {
 		return begin()[index];
 	}
 private:
 	buf_t data_{};
-	u64 size_{};
+	size_t size_{};
 };

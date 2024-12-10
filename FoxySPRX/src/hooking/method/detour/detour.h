@@ -11,10 +11,9 @@ struct detour {
 	virtual ~detour();
 	virtual void createHook(uint64_t address, uint64_t callback, uint64_t tocOverride = 0);
 	virtual bool removeHook();
-	template<typename ret, typename ...t>
-	ret callOriginal(t... args) {
-		auto fn = (fnptr<ret(t...)>)(m_trampolineOpd);
-		return fn(args...);
+	template <typename t>
+	t getOg() {
+		return t(m_trampolineOpd);
 	}
 private:
 	size_t jump(void* destination, const void* branchTarget, bool linked, bool preserveRegister);

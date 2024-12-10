@@ -3,6 +3,23 @@
 #include "common/string.h"
 #include "common/math.h"
 
+namespace rage {
+	char toLower(cc c) {
+		return (c >= 'A' && c <= 'Z') ? c + ('a' - 'A') : c;
+	}
+	u32 atComputeHash(ccp str) {
+		u32 hash{};
+		while (*str) {
+			hash += toLower(*str++);
+			hash += (hash << 10);
+			hash ^= (hash >> 6);
+		}
+		hash += (hash << 3);
+		hash ^= (hash >> 11);
+		hash += (hash << 15);
+		return hash;
+	}
+}
 void reverse(buf_t str, s32 length) {
 	s32 start = 0;
 	s32 end = length - 1;
@@ -48,8 +65,8 @@ string ftos(fp n) {
 	return dtos(static_cast<db>(n));
 }
 ccp string_combine(ccp str1, ccp str2) {
-	s32 len1 = strlen(str1), len2 = strlen(str2);
-	buf_t result = new char[len1 + len2 + 1];
+	s32 len1{ strlen(str1) }, len2{ strlen(str2) };
+	buf_t result{ new char[len1 + len2 + 1] };
 	strncpy(result, str1, len1 + len2 + 1);
 	strncat(result, str2, len2);
 	result[len1 + len2] = '\0';
@@ -68,8 +85,8 @@ ccp substr(ccp str, s32 start, s32 end) {
 	return str;
 }
 s32 find_last_of(ccp str, char c) {
-	s32 len = strlen(str);
-	for (s32 i = len - 1; i >= 0; i--) {
+	s32 len{ strlen(str) };
+	for (s32 i{ len - 1 }; i >= 0; i--) {
 		if (str[i] == c) {
 			return i;
 		}
@@ -77,19 +94,43 @@ s32 find_last_of(ccp str, char c) {
 	return -1;
 }
 void mset(void* ptr, s32 value, u64 num) {
-	u8* p = static_cast<u8*>(ptr);
+	u8* p{ static_cast<u8*>(ptr) };
 	u8 byteValue = static_cast<u8>(value);
 	for (u64 i{}; i != num; ++i) {
 		*p++ = byteValue;
 	}
 }
-CellFsErrno createFile(ccp loc) {
-	s32 fd;
+bool createDirectories(ccp path) {
+	CellFsStat stat{};
+	if (cellFsStat(path, &stat) != CELL_OK) {
+		return cellFsMkdir(path, CELL_FS_S_IRWXO | CELL_FS_S_IRWXU | CELL_FS_S_IRWXG | CELL_FS_S_IFDIR | CELL_FS_S_IFDIR | 0777);
+	}
+	return false;
+}
+CellFsErrno createFile(ccp file) {
+	s32 fd{};
 	CellFsErrno err{};
-	err = cellFsOpen(loc, CELL_FS_O_CREAT | CELL_FS_O_RDWR | CELL_FS_O_TRUNC, &fd, NULL, 0);
+	err = cellFsOpen(file, CELL_FS_O_CREAT | CELL_FS_O_RDWR | CELL_FS_O_TRUNC, &fd, NULL, 0);
 	cellFsClose(fd);
 	if (!err) {
 		cellFsClose(fd);
+	}
+	return err;
+}
+CellFsErrno readFile(ccp file, char buf[], s32 size, u32 offset) {
+	s32 fd{};
+	CellFsErrno err{};
+	u64 pos{};
+	u64 nread{};
+	cellFsChmod(file, 0777);
+	err = cellFsOpen(file, CELL_FS_O_RDONLY, &fd, NULL, 0);
+	if (!err) {
+		cellFsLseek(fd, offset, CELL_FS_SEEK_SET, &pos);
+		err = cellFsRead(fd, buf, size, &nread);
+		if (!err) {
+			cellFsClose(fd);
+			return err;
+		}
 	}
 	return err;
 }
@@ -105,7 +146,21 @@ CellFsErrno writeToFile(ccp file, char buf[], s32 size, bool append) {
 	err = cellFsClose(fd);
 	return err;
 }
-
+s32 fileSize(ccp file) {
+	CellFsErrno err{};
+	s32 fd{};
+	s32 size{};
+	err = cellFsOpen(file, CELL_FS_O_RDONLY, &fd, NULL, 0);
+	if (!err) {
+		CellFsStat stat{};
+		err = cellFsFstat(fd, &stat);
+		if (!err) {
+			size = stat.st_size;
+		}
+		cellFsClose(fd);
+	}
+	return size;
+}
 void* operator new(st size) _THROW1(_XSTD bad_alloc) {
     return malloc(size);
 }
@@ -184,8 +239,8 @@ string::string(const string& other) {
 	memcpy(data_, other.data_, size_);
 	data_[size_] = '\0';
 }
-string::string(u64 size) : string(size, '\0') {}
-string::string(u64 size, char initValue) {
+string::string(size_t size) : string(size, '\0') {}
+string::string(size_t size, char initValue) {
 	size_ = size;
 	data_ = new char[size + 1];
 	mset(data_, initValue, size_);
@@ -194,7 +249,7 @@ string::string(u64 size, char initValue) {
 string::~string() {
 	delete[] data_;
 }
-void string::insert(u64 pos, ccp str) {
+void string::insert(size_t pos, ccp str) {
 	if (pos > size_) {
 		return;
 	}
@@ -207,7 +262,7 @@ void string::insert(u64 pos, ccp str) {
 	data_ = new_data;
 	size_ += str_len;
 }
-void string::insert(u64 pos, char c) {
+void string::insert(size_t pos, char c) {
 	if (pos > size_) {
 		return;
 	}
@@ -219,7 +274,7 @@ void string::insert(u64 pos, char c) {
 	data_ = new_data;
 	size_ += 1;
 }
-template <u64 s>
+template <size_t s>
 void string::append(const char(&str)[s]) {
 	strncat(data_, str, s);
 }

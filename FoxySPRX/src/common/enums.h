@@ -1,26 +1,27 @@
 #pragma once
 
 enum eButtons {
-	BUTTON_TRIANGLE = 0xB4,
-	BUTTON_O = 0xC0,
-	BUTTON_X = 0xCD,
-	BUTTON_SQUARE = 0xBF,
-	BUTTON_L1 = 0xC1,
-	BUTTON_L2 = 0xC3,
-	BUTTON_L3 = 0xC5,
-	BUTTON_R1 = 0xC2,
-	BUTTON_R2 = 0xC4,
-	BUTTON_R3 = 0xC6,
-	DPAD_UP = 0xC7,
-	DPAD_RIGHT = 0xCA,
-	DPAD_LEFT = 0xC9,
-	DPAD_DOWN = 0xA1,
-	BUTTON_SELECT = 0xCB,
-	BUTTON_START = 0xF
+	BUTTON_EMPTY = -1,
+	DPAD_RIGHT = 205,
+	DPAD_LEFT = 204,
+	DPAD_DOWN = 203,
+	DPAD_UP = 202,
+	BUTTON_START = 176,
+	BUTTON_R2 = 199,
+	BUTTON_L2 = 198,
+	BUTTON_R1 = 197,
+	BUTTON_L1 = 196,
+	BUTTON_O = 195,
+	BUTTON_SQUARE = 194,
+	BUTTON_X = 193,
+	BUTTON_TRIANGLE = 192,
+	BUTTON_SELECT = 191,
+	BUTTON_L3 = 185,
+	BUTTON_R3 = 186
 };
 
 enum eControllerInputs {
-	ControlInputEmpty = 420,
+	ControlInputEmpty = -1,
 	ControlNextCamera = 0,
 	ControlLookLeftRight = 1,
 	ControlLookUpDown = 2,

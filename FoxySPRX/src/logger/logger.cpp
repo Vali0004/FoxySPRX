@@ -7,7 +7,7 @@ void logger::create(ccp name) {
 	filename = name;
 	path = string_combine(basePath, filename);
 	createFile(path);
-	writeToFile(path, "Logger created\n", 15, false);
+	writeToFile(path, (char*)"Logger created\n", 15, false);
 }
 void logger::destroy() {
 	basePath = "";
@@ -15,7 +15,7 @@ void logger::destroy() {
 	path = "";
 }
 void logger::vasend(ccp type, ccp fmt, std::va_list args) {
-	s32 strSize{ strlen(fmt) + sizeof(args) + 50 };
+	u32 strSize{ strlen(fmt) + sizeof(args) + 50 };
 	buf_t fmtMessage = new char[strSize];
 	vsnprintf(fmtMessage, strSize, fmt, args);
 	buf_t message = new char[strlen(type) + strlen(fmtMessage) + 3];

@@ -13,7 +13,7 @@ namespace memory {
 		mem get() {
 			mem res{ util::findPattern(m_elements, m_module) };
 			if (res) {
-				g_logger.send("Info", "Found %s at 0x%lX", m_name, (u32)res.as<u32*>());
+				g_logger.send("Info", "Found %s at 0x%lX", m_name.data(), (u32)res.as<u32*>());
 			}
 			else {
 				g_logger.send("Info", "Failed to find %s", m_name);

@@ -3,7 +3,7 @@
 namespace rage {
 	union scrValue {
 		int Int;
-		unsigned int Uns;
+		unsigned Uns;
 		float Float;
 		const char* String;
 		scrValue* Reference;

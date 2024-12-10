@@ -30,19 +30,19 @@ namespace gui {
 		ccp m_set{ "HUD_FRONTEND_DEFAULT_SOUNDSET" };
 	};
 	struct input {
-		input(u64 delay, eControllerInputs nativeKey, eControllerInputs secondaryNativeKey) :
+		input(u64 delay, eButtons nativeKey, eButtons secondaryNativeKey) :
 			m_delay(delay),
 			m_nativeKey(nativeKey), m_secondaryNativeKey(secondaryNativeKey)
 		{}
-		input(u64 delay, eControllerInputs nativeKey) : input(delay, nativeKey, ControlInputEmpty) {}
-		input(eControllerInputs nativeKey, eControllerInputs secondaryNativeKey) : input(10, nativeKey, secondaryNativeKey) {}
-		input(eControllerInputs nativeKey) : input(nativeKey, ControlInputEmpty) {}
-		input() : input(ControlInputEmpty) {}
+		input(u64 delay, eButtons nativeKey) : input(delay, nativeKey, BUTTON_EMPTY) {}
+		input(eButtons nativeKey, eButtons secondaryNativeKey) : input(10, nativeKey, secondaryNativeKey) {}
+		input(eButtons nativeKey) : input(nativeKey, BUTTON_EMPTY) {}
+		input() : input(BUTTON_EMPTY) {}
 
 		u64 m_delay{};
 		bool m_pressed{};
-		eControllerInputs m_nativeKey{};
-		eControllerInputs m_secondaryNativeKey{};
+		eButtons m_nativeKey{};
+		eButtons m_secondaryNativeKey{};
 		operator bool() {
 			return m_pressed;
 		}

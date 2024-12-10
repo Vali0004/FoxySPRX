@@ -2,7 +2,8 @@
 #include "ui/script/script.h"
 #include "logger/logger.h"
 #include "rage/natives/natives.h"
-#include <ui/manager/manager.h>
+#include "ui/manager/manager.h"
+#include "features/features.h"
 
 s32 frameCount{};
 bool once{};
@@ -15,5 +16,6 @@ void hooks::networkIsSignedOnline(rage::scrNativeCallContext* ctx) {
 			once = true;
 		}
 		script::tick();
+		features::tick();
 	}
 }

@@ -11,7 +11,9 @@ public:
 		return { Index + Array * Size };
 	}
 	rage::scrValue* Value() {
-		return pointers::g_globals[Index >> 18 & 0x3F] + (Index & 0x3FFFF);
+		//PPC moment
+		rage::scrValue* ptr{ *reinterpret_cast<rage::scrValue**>((pointers::g_globals - 4) + (((Index / 0x40000) & 0x3F) * 4)) };
+		return ptr + ((Index % 0x40000) * 4);
 	}
 public:
 	u64 Index;

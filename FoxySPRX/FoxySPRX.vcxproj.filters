@@ -232,6 +232,25 @@
     <ClInclude Include="src\util\global.h">
       <Filter>src\util</Filter>
     </ClInclude>
+    <ClInclude Include="src\rage\scr_program.h">
+      <Filter>src\rage</Filter>
+    </ClInclude>
+    <ClInclude Include="src\rage\ped_factory.h">
+      <Filter>src\rage</Filter>
+    </ClInclude>
+    <ClInclude Include="src\rage\page.h">
+      <Filter>src\rage</Filter>
+    </ClInclude>
+    <ClInclude Include="src\rage\joaat.h">
+      <Filter>src\rage</Filter>
+    </ClInclude>
+    <ClInclude Include="src\features\script_injector.h">
+      <Filter>src\features</Filter>
+    </ClInclude>
+    <ClInclude Include="src\util\pad.h">
+      <Filter>src\util</Filter>
+    </ClInclude>
+    <ClInclude Include="src\common\pair.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -517,6 +536,45 @@
     </ClCompile>
     <ClCompile Include="src\memory\util.cpp">
       <Filter>src\memory</Filter>
+    </ClCompile>
+    <ClCompile Include="src\hooking\hooks\are_online_policies_up_to_date.cpp">
+      <Filter>src\hooking\hooks</Filter>
+    </ClCompile>
+    <ClCompile Include="src\hooking\hooks\dlc_check_cloud_data_correct.cpp">
+      <Filter>src\hooking\hooks</Filter>
+    </ClCompile>
+    <ClCompile Include="src\hooking\hooks\force_cloud_mp_stats_download_and_overwrite_local_save.cpp">
+      <Filter>src\hooking\hooks</Filter>
+    </ClCompile>
+    <ClCompile Include="src\hooking\hooks\network_are_social_club_policies_current.cpp">
+      <Filter>src\hooking\hooks</Filter>
+    </ClCompile>
+    <ClCompile Include="src\hooking\hooks\network_have_communication_privileges.cpp">
+      <Filter>src\hooking\hooks</Filter>
+    </ClCompile>
+    <ClCompile Include="src\hooking\hooks\network_is_signed_in.cpp">
+      <Filter>src\hooking\hooks</Filter>
+    </ClCompile>
+    <ClCompile Include="src\hooking\hooks\sc_profanity_get_check_is_pending.cpp">
+      <Filter>src\hooking\hooks</Filter>
+    </ClCompile>
+    <ClCompile Include="src\hooking\hooks\sc_profanity_get_check_is_valid.cpp">
+      <Filter>src\hooking\hooks</Filter>
+    </ClCompile>
+    <ClCompile Include="src\hooking\hooks\sc_profanity_get_string_status.cpp">
+      <Filter>src\hooking\hooks</Filter>
+    </ClCompile>
+    <ClCompile Include="src\features\script_injector.cpp">
+      <Filter>src\features</Filter>
+    </ClCompile>
+    <ClCompile Include="src\hooking\hooks\handle_clone_sync.cpp">
+      <Filter>src\hooking\hooks</Filter>
+    </ClCompile>
+    <ClCompile Include="src\hooking\hooks\input.cpp">
+      <Filter>src\hooking\hooks</Filter>
+    </ClCompile>
+    <ClCompile Include="src\util\pad.cpp">
+      <Filter>src\util</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

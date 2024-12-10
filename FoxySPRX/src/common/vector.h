@@ -4,7 +4,7 @@
 #include "defines.h"
 
 template <typename t>
-class vectorr {
+class vectorr { //why does vector math have a define to define it away? the fuck....
 public:
 	void reserve(s32 s) {
 		preallocatedSize = s;
@@ -26,7 +26,7 @@ public:
 	}
 	t get(s32 index) {
 		if (index > size())
-			return NULL;
+			return {};
 		return data()[index];
 	}
 	s32 size() {
@@ -35,6 +35,10 @@ public:
 	t operator[](int index) {
 		return get(index);
 	}
+	t* begin() { return data(); }
+	t* end() { return data() + size(); }
+	const t* begin() const { return data(); }
+	const t* end() const { return data() + size(); }
 	t* data() {
 		return table;
 	}

@@ -1,8 +1,4 @@
-﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
-################################################################################
-
-*.ipch
+﻿*.ipch
 *.db-shm
 *.db
 *.suo
@@ -14,3 +10,7 @@
 *.sprx
 *.a
 *.txt
+*.opensdf
+*.sdf
+.vs
+Bin

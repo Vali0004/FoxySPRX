@@ -5,8 +5,12 @@
 #include "ui/submenus/demo/demo.h"
 #include "ui/submenus/players/players.h"
 #include "ui/submenus/settings/settings.h"
+#include <features/script_injector.h>
+#include "util/pad.h"
 
 namespace script {
+	bool once{};
+	int type{};
 	void create() {
 		gui::g_isOpen = true;
 		gui::drawing::math::set();
@@ -20,6 +24,7 @@ namespace script {
 		gui::g_menu.once();
 	}
 	void tick() {
+		SCRIPT::REQUEST_SCRIPT("fm_deathmatch_creator");
 		//Disable/enable phone
 		if (gui::g_isOpen)
 			CONTROLS::DISABLE_CONTROL_ACTION(0, ControlPhone);
@@ -34,13 +39,7 @@ namespace script {
 		//Allows rendering of paused elements
 		GRAPHICS::TOGGLE_PAUSED_RENDERPHASES(TRUE);
 		/*//Draw behind (actually, if set the GFX order to 8, it's more of a way to draw in transition)
-		GRAPHICS::SET_SCRIPT_GFX_DRAW_BEHIND_PAUSEMENU(TRUE);
-		//Grabs pausemenu ownership to avoid pausing (not currently possible to stop pausing in story)
-		GRAPHICS::GRAB_PAUSEMENU_OWNERSHIP();
-		//Read above
-		MISC::SET_GAME_PAUSED(FALSE);
-		MISC::SET_THIS_SCRIPT_CAN_BE_PAUSED(FALSE);
-		*/
+		GRAPHICS::SET_SCRIPT_GFX_DRAW_BEHIND_PAUSEMENU(TRUE);*/
 		gui::drawing::draw();
 	}
 }

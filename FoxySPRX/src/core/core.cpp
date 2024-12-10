@@ -17,8 +17,10 @@ namespace core {
 	}
 	void uninit() {
 		g_hooking->disable();
+		SLEEP(1);
 		delete g_hooking;
 		gui::g_menus.clear();
+		g_logger.destroy();
 	}
 	void entry(u64 a) {
 		preinit();
@@ -28,7 +30,7 @@ namespace core {
 	}
 	namespace sys {
 		void thread::create(ppu_thr_t& id, fnptr<void(u64)> entry, s32 stackSize, ccp name) {
-			sys_ppu_thread_create(&id, entry, NULL, 1450, stackSize * 5, SYS_PPU_THREAD_CREATE_JOINABLE, name);
+			sys_ppu_thread_create(&id, entry, NULL, 1450, stackSize, SYS_PPU_THREAD_CREATE_JOINABLE, name);
 		}
 		void thread::join(ppu_thr_t& id, u64& v) {
 			sys_ppu_thread_join(id, &v);
@@ -38,7 +40,7 @@ namespace core {
 				return SYS_PRX_RESIDENT;
 			}
 			int start() {
-				sys::thread::create(threadId, entry, 4096, "FoxySPRX");
+				sys::thread::create(threadId, entry, 0x8000, "FoxySPRX");
 				return SYS_PRX_START_OK;
 			}
 			int stop() {
