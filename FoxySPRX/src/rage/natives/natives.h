@@ -4746,7 +4746,7 @@ namespace DECORATOR
 	nativeDecl BOOL DECOR_SET_TIME(Entity entity, const char* propertyName, int timestamp) { return invoke<BOOL>(0xBBAEEF94, entity, propertyName, timestamp); } // 0xBBAEEF94
 	nativeDecl BOOL DECOR_SET_BOOL(Entity entity, const char* propertyName, BOOL value) { return invoke<BOOL>(0x8E101F5C, entity, propertyName, value); } // 0x8E101F5C
 	nativeDecl BOOL DECOR_SET_INT(Entity entity, const char* propertyName, int value) { return invoke<BOOL>(0xDB718B21, entity, propertyName, value); } // 0xDB718B21
-	nativeDecl BOOL DECOR_GET_BOOL(Entity entity, const cha* propertyName) { return invoke<BOOL>(0xDBCE51E0, entity, propertyName); } // 0xDBCE51E0
+	nativeDecl BOOL DECOR_GET_BOOL(Entity entity, const char* propertyName) { return invoke<BOOL>(0xDBCE51E0, entity, propertyName); } // 0xDBCE51E0
 	nativeDecl int DECOR_GET_INT(Entity entity, const char* propertyName) { return invoke<int>(0xDDDE59B5, entity, propertyName); } // 0xDDDE59B5
 	nativeDecl BOOL DECOR_EXIST_ON(Entity entity, const char* propertyName) { return invoke<BOOL>(0x74EF9C40, entity, propertyName); } // 0x74EF9C40
 	nativeDecl BOOL DECOR_REMOVE(Entity entity, const char* propertyName) { return invoke<BOOL>(0xE0E2640B, entity, propertyName); } // 0xE0E2640B

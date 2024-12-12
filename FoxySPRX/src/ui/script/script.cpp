@@ -5,8 +5,7 @@
 #include "ui/submenus/demo/demo.h"
 #include "ui/submenus/players/players.h"
 #include "ui/submenus/settings/settings.h"
-#include <features/script_injector.h>
-#include "util/pad.h"
+#include "features/script_injector.h"
 
 namespace script {
 	bool once{};

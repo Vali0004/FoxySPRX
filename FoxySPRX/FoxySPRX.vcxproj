@@ -15,16 +15,6 @@
     <ClCompile Include="src\core\core.cpp" />
     <ClCompile Include="src\features\features.cpp" />
     <ClCompile Include="src\features\script_injector.cpp" />
-    <ClCompile Include="src\hooking\hooks\are_online_policies_up_to_date.cpp" />
-    <ClCompile Include="src\hooking\hooks\dlc_check_cloud_data_correct.cpp" />
-    <ClCompile Include="src\hooking\hooks\input.cpp" />
-    <ClCompile Include="src\hooking\hooks\network_are_social_club_policies_current.cpp" />
-    <ClCompile Include="src\hooking\hooks\network_have_communication_privileges.cpp" />
-    <ClCompile Include="src\hooking\hooks\network_is_signed_in.cpp" />
-    <ClCompile Include="src\hooking\hooks\sc_profanity_get_check_is_pending.cpp" />
-    <ClCompile Include="src\hooking\hooks\sc_profanity_get_check_is_valid.cpp" />
-    <ClCompile Include="src\hooking\hooks\sc_profanity_get_string_status.cpp" />
-    <ClCompile Include="src\hooking\hooks\force_cloud_mp_stats_download_and_overwrite_local_save.cpp" />
     <ClCompile Include="src\util\filesystem\filesystem.cpp" />
     <ClCompile Include="src\hooking\hooking.cpp" />
     <ClCompile Include="src\hooking\hooks\network_is_signed_online.cpp" />
@@ -66,7 +56,6 @@
     <ClCompile Include="src\ui\submenus\settings\subtitle\background\subtitle_background.cpp" />
     <ClCompile Include="src\ui\submenus\settings\subtitle\subtitle.cpp" />
     <ClCompile Include="src\ui\submenus\settings\subtitle\text\subtitle_text.cpp" />
-    <ClCompile Include="src\util\pad.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\common\defines.h" />
@@ -152,7 +141,6 @@
     <ClInclude Include="src\ui\types\submenu_option.h" />
     <ClInclude Include="src\ui\types\vector_option.h" />
     <ClInclude Include="src\util\global.h" />
-    <ClInclude Include="src\util\pad.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCTargetsPath Condition="'$(VCTargetsPath12)' != '' and '$(VSVersion)' == '' and '$(VisualStudioVersion)' == ''">$(VCTargetsPath12)</VCTargetsPath>
